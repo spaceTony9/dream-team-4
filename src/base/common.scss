@@ -1,0 +1,119 @@
+
+/* Reset */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+    color: inherit;
+}
+
+img {
+  font-size: 0;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+picture {
+  font-size: 0;
+  display: block;
+
+  overflow: hidden;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
+ /* Base  Components  */
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--main-text-color-dark-theme);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.04em;
+  stroke: var(--black-color);
+  background-color: var(--background-color-light-theme);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 375px) {
+  .container {
+    width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+  }
+}
+
+.section {
+  padding-top: 112px;
+  padding-bottom: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding-bottom: 172px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .section {
+    padding-top: 112px;
+    padding-bottom: 72px;
+  }
+}
+
+.section-title {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+@media screen and (min-width: 768px) {
+  .section-title {
+    font-size: 68px;
+  }
+}
