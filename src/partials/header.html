@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-<a href="pages/shopping-list.html">Shopping-list</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="container-header">
+      <div class="header-main">
+        <nav class="header-nav">
+          <a class="header-link" href="../index.html">
+            <svg class="header-svg" widtch="109" height="28" aria-label="">
+              <use href="../img/symbol-defs.svg#icon-logo"></use>
+            </svg>
+          </a>
+          <ul class="header-list">
+            <li class="header-list-list">
+              <a class="header-title" href="../index.html">
+                <span class="header-link-span">Home</span>
+              </a>
+            </li>
+            <li>
+              <a class="header-title" href="../index.html">"Shopping list " </a>
+              <span class="header-span">
+                <svg widtch="20" height="20" aria-label="">
+                  <use href="../img/symbol-defs.svg#icon-shopping"></use>
+                </svg>
+              </span>
+            </li>
+          </ul>
+        </nav>
+        <div class="checkbox-thumb">
+          <input type="checkbox" id="checkbox" class="checkbox" />
+          <label class="theme-toggle" for="checkbox"></label>
+          <div class="checkbox-circle"></div>
+        </div>
+      </div>
+    </header>
+    <a href="pages/shopping-list.html">Shopping-list</a>
+  </body>
 </html>
