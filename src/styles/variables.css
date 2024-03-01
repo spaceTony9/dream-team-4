@@ -1,0 +1,25 @@
+:root {
+    --main-text-color-dark-theme: #202024;
+    --main-text-color-light-theme: #F6F6F6;
+    --secondary-text-color: #b4afaf;
+  
+    --brand-color: #4f2ee8;
+    --white-color: #ffffff;
+    --black-color: #111111;
+    --accent-color: rgba(234, 198, 69, 1);
+  
+    --background-color-light-theme: #f6f6f6;
+    --background-color-dark-theme: #202024;
+  
+    --categories-list-light-theme: rgba(17, 17, 17, 0.6);
+    --categories-list-dark-theme: #ffffff;
+  
+    --brand-color: #4f2ee8;
+    --white-cl: #ffffff;
+    --black-cl: #111111;
+    --yellow-cl: #ffff00;
+  
+    --hover-light-theme: #4f2ee8;
+    --hover-dark-theme: #eac645;
+   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
