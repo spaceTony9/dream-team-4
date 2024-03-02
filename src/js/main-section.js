@@ -4,6 +4,12 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { fetchBooks } from './fetchBooks.js';
 import Notiflix from 'notiflix';
 
+const allCategoryBtn = document.querySelector('#allCategoryBtn');
+const categorieList = document.querySelector('.categorie-list');
+const allBooksTitle = document.querySelector('.all-books-title');
+const bookListRef = document.querySelector('.category__books');
+const sortTitle = document.querySelector('.category-title');
+
 allCategoryBtn.addEventListener('click', onAllCategoriesClick);
 
 function onAllCategoriesClick() {
@@ -59,9 +65,18 @@ function markupBooks(array) {
   return categories;
 }
 
+async function startPage() {
+  Loading.hourglass('Loading...', {
+    messageColor: '#eac645',
+    messageFontSize: '30px',
+    svgSize: '100px',
+    svgColor: '#4f2ee8',
+  });
+
   bookListRef.innerHTML = '';
   sortTitle.style.display = 'none';
   allBooksTitle.style.display = 'block';
+  
   try {
     const data = await fetchBooks();
     const markup = await markupBooks(data);
