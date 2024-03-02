@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-<a href="pages/shopping-list.html">Shopping-list</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/header.css" />
+  </head>
+  <body>
+    <header class="container-header">
+      <div class="header-main">
+        <a class="header-link" href="../index.html">
+          <svg class="header-svg1" width="24" height="24">
+            <use href="../img/symbol-defs.svg#icon-logo-4"></use>
+          </svg>
+          <svg class="header-svg" width="78" height="14" aria-label="">
+            <use href="../img/symbol-defs.svg#icon-Bookshelf-1"></use>
+          </svg>
+        </a>
+        <nav class="header-nav">
+          <ul class="header-list">
+            <li class="header-list-list">
+              <a class="header-title-home header-title" href="../index.html">
+                Home
+              </a>
+            </li>
+            <li class="header-list-list">
+              <a
+                class="header-title-home header-title"
+                href="../partials/shoplist.html"
+                >Shopping list
+                <svg width="20" height="20" aria-label="">
+                  <use href="../img/symbol-defs.svg#icon-shopping"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-checkbox-thumb">
+          <input type="checkbox" id="checkbox" class="checkbox" />
+          <label class="theme-toggle" for="checkbox"></label>
+          <div class="checkbox-circle"></div>
+        </div>
+
+        <div class="header-burger">
+          <svg width="28" height="28" aria-label="">
+            <use href="../img/symbol-defs.svg#icon-burger-2"></use>
+          </svg>
+        </div>
+
+        <div class="header-btn-wrapper">
+          <button class="header-btn" type="submit">
+            Sign up
+            <svg width="20" height="20" aria-label="">
+              <use href="../img/symbol-defs.svg#icon-arrow-narrow-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+  </body>
 </html>

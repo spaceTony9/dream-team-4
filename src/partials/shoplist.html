@@ -5,22 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../styles/shopping-list.css">
 </head>
 <body>
     <!-- Модальне вікно -->
     <div class="modal" id="myModal">
         <div class="modal-content">
             <!-- Зміст модального вікна -->
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Book Details</h2>
+                <button class="close" data-modal-close="" aria-label="Close modal"> <svg
+                        class="close-btn-icon" width="24" height="24">
+                        <use href="/icons.9d45231e.svg#icon-x-close"></use>
+                    </svg> </button>
+                
             </div>
             <div class="modal-body">
                 <!-- Зміст книги -->
                 <div id="bookDetails"></div>
                 <!-- Кнопки додавання та видалення з Shopping list -->
                 <button id="addToShoppingList">Add to Shopping List</button>
-                <button id="removeFromShoppingList">Remove from Shopping List</button>
             </div>
         </div>
     </div>
