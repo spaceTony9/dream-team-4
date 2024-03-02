@@ -6,7 +6,7 @@ const booksSection = document.querySelector('.main-page-books-section');
 let bookShelfContainer = null;
 
 //Just export this function to your code and call it
-export async function booksMainPage() {
+export async function markupPopularBooks() {
   return await urlCreator(CONSTANTS.POPULAR_BOOKS_ALL_CATEGORIES)
     .then(({ data }) => {
       //receiving the responce from api and marking the result
