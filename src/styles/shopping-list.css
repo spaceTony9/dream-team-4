@@ -101,7 +101,7 @@ color: #4F2EE8;
     pointer-events: none;
 }
 
-
+/* syntax error in comented code */
 @media screen and (min-width: 768px) .close{
     top: 24px;
     right: 24px;
