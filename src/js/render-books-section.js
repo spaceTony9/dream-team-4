@@ -2,18 +2,25 @@ import { CONSTANTS } from './constants';
 import { urlCreator } from './api-service';
 
 const booksSection = document.querySelector('.main-page-books-section');
-const bookShelfContainer = document.querySelector('.book-shelf-container');
 
-urlCreator(CONSTANTS.POPULAR_BOOKS_ALL_CATEGORIES)
-  .then(({ data }) => {
-    console.log(data);
-    // console.log(data);
-    booksSection.insertAdjacentHTML('beforeend', createBookShelf(data));
-    // bookShelfContainer.insertAdjacentHTML('beforeend', fillBookShelf(array))
-  })
-  .catch(error => console.log(error));
+let bookShelfContainer = null;
+
+//Just export this function to your code and call it
+export async function booksMainPage() {
+  return await urlCreator(CONSTANTS.POPULAR_BOOKS_ALL_CATEGORIES)
+    .then(({ data }) => {
+      //receiving the responce from api and marking the result
+      booksSection.insertAdjacentHTML('beforeend', createBookShelf(data));
+      bookShelfContainer = document.querySelector('.book-shelf-container');
+      bookShelfContainer.insertAdjacentHTML('beforeend', fillBookShelf(data));
+    })
+    .catch(error => console.log(error));
+}
+
+// Calling api service to deliver popular books
 
 function createBookShelf(array) {
+  // function creates div wrapper with name of the books category
   return array
     .map(
       book => `<div class="book-shelf">
@@ -23,14 +30,18 @@ function createBookShelf(array) {
     )
     .join('');
 }
-
+// this function fills previously created bookshelves
 function fillBookShelf(array) {
-  return array.map(
-    book => `
-        <div>
-          <img src="${book.book_image}" alt="" />
-          <h2>${book.title}</h2>
-          <p>${book.author}</p>
-        </div>`
+  return array.map(book =>
+    book.books
+      .map(bookdata => {
+        return `<div>
+  <img src="${bookdata.book_image}" alt="" />
+  <h2>${bookdata.title}</h2>
+  <p>${bookdata.author}</p>
+</div>`;
+      })
+      .join('')
   );
 }
+
