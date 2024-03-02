@@ -93,4 +93,54 @@ color: #4F2EE8;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+};
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+@media screen and (min-width: 768px) .close{
+    top: 24px;
+    right: 24px;
+};
+
+ @media screen and (min-width: 768px) .modal {
+     width: 579px;
+     padding: 40px;
+ };
+
+ 
+.modal{
+   
+width: 336px;
+background-color: #fff;
+border: 1px solid #111;
+border-radius: 20px;
+margin: 70px 15px 30px;
+padding: 40px 25px;
+position: relative;
+}
+
+.close{
+    fill: #111;
+        cursor: pointer;
+        background-color: #fff;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        transition: fill .25s cubic-bezier(.4, 0, .2, 1);
+        display: inline-flex;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+    }
+
+}
+
+.close-btn-icon{
+
 }
