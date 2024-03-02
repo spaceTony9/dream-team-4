@@ -1,0 +1,8 @@
+main{
+    display: flex;
+    padding-top: 80px;
+}
+
+.render-books-section {
+    width: 100%;
+}
