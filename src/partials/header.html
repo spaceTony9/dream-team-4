@@ -4,29 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../styles/header.css" />
   </head>
   <body>
     <header class="container-header">
       <div class="header-main">
+        <a class="header-link" href="../index.html">
+          <svg class="header-svg1" width="24" height="24">
+            <use href="../img/symbol-defs.svg#icon-logo-4"></use>
+          </svg>
+          <svg class="header-svg" width="78" height="14" aria-label="">
+            <use href="../img/symbol-defs.svg#icon-Bookshelf-1"></use>
+          </svg>
+        </a>
         <nav class="header-nav">
-          <a class="header-link" href="../index.html">
-            <svg class="header-svg" widtch="109" height="28" aria-label="">
-              <use href="../img/symbol-defs.svg#icon-logo"></use>
-            </svg>
-          </a>
           <ul class="header-list">
             <li class="header-list-list">
-              <a class="header-title" href="../index.html">
-                <span class="header-link-span">Home</span>
+              <a class="header-title-home header-title" href="../index.html">
+                Home
               </a>
             </li>
-            <li>
-              <a class="header-title" href="../index.html">"Shopping list " </a>
-              <span class="header-span">
-                <svg widtch="20" height="20" aria-label="">
-                  <use href="../img/symbol-defs.svg#icon-shopping"></use>
-                </svg>
-              </span>
+            <li class="header-list-list">
+              <a class="header-title" href="../index.html">Shopping list</a>
+
+              <svg width="20" height="20" aria-label="">
+                <use href="../img/symbol-defs.svg#icon-shopping"></use>
+              </svg>
             </li>
           </ul>
         </nav>
@@ -35,6 +38,12 @@
           <label class="theme-toggle" for="checkbox"></label>
           <div class="checkbox-circle"></div>
         </div>
+        <button class="header-btn">
+          Sign up
+          <svg width="20" height="20" aria-label="">
+            <use href="../img/symbol-defs.svg#icon-arrow-narrow-right"></use>
+          </svg>
+        </button>
       </div>
     </header>
 
