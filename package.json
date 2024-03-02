@@ -19,6 +19,7 @@
     "firebase": "^10.8.1",
     "izitoast": "^1.4.0",
     "modern-normalize": "^2.0.0",
+    "notiflix": "^3.2.7",
     "sass": "^1.71.1",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
