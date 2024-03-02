@@ -1,48 +1,80 @@
-.catygories-and-support {
+.book-category__list-item {
+  font-size: 16px;
+  line-height: calc(18 / 16);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: rgba(17, 17, 17, 0.6);
+  margin-bottom: 24px;
+  height: 18px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.book-category__list-item:hover,
+.book-category__list-item:focus {
+  color: var(--brand-color);
+  width: 318px;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.book-category__list-item:last-child {
+  margin-bottom: 0;
+}
+
+.book-category__container {
   padding-bottom: 40px;
 }
 
-.categories-list {
-  margin: 0 0 40px 0;
-  display: inline-flex;
-  flex-direction: column;
-  gap: 14px;
+.book-category__box {
+  width: 335px;
   height: 228px;
   overflow-y: scroll;
-  width: 335px;
-  padding-right: 28px;
 }
 
-.categories-list::-webkit-scrollbar {
-  width: 8px;
-  border-radius: 12px;
+@media screen and (min-width: 768px) {
+  .book-category__box {
+    width: 337px;
+    height: 495px;
+    padding-top: 10px;
+  }
 }
 
-.categories-list::-webkit-scrollbar-thumb {
-  background: #E0E0E0;
-  border-radius: 12px;
-  height: 114px;
+@media screen and (min-width: 1440px) {
+  .book-category__box {
+    width: 356px;
+  }
 }
 
-.side-category {
-  padding: 5px 0;
-  text-transform: capitalize;
-  font-size: 16px;
-  line-height: 18px;
-  letter-spacing: -0.02em;
-  transition: color var(--transition);
-}
-
-.categories-list li:first-child a {
-  padding: 0px 0 5px 0;
-}
-
-.selected-category a,
-.side-category:hover,
-.side-category:active {
-  font-weight: 700;
-  font-size: 14px;
-  text-transform: uppercase;
+.active {
   color: var(--brand-color);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+::-webkit-scrollbar {
+  width: 10px;
 }
 
+::-moz-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  height: 167px;
+  background: transparent;
+}
+
+::-moz-scrollbar-track {
+  height: 167px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 12px;
+}
+
+::-moz-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 12px;
+}
