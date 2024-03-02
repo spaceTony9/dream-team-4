@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-// Reuta
-// import './js/APIservice.js';
-// import './js/book-categories';
-// import './js/book-categories-rendering';
-=======
  // Reuta
 import './js/APIservice.js';
 import './js/book-categories';
@@ -11,7 +5,6 @@ import './js/book-categories-rendering';
 import './js/notificationsNotiflix.js';
 import './js/bestsellers.js';
 
->>>>>>> Stashed changes
 import { CONSTANTS } from './js/constants.js';
 import { urlCreator } from './js/api-service.js';
 
