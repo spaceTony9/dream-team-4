@@ -1,5 +1,4 @@
 import Axios from 'axios';
-import IziToast from 'izitoast';
 
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
