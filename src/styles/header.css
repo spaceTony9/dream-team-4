@@ -14,8 +14,8 @@
 }
 
 .header-main {
-  /* margin-left: auto;
-  margin-right: auto; */
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
 
   padding-left: 20px;
@@ -27,12 +27,15 @@
 .header-btn-wrapper {
   display: none;
 }
+.header-title {
+  margin-right: 6px;
+}
 
 @media (min-width: 375px) {
   .header-main {
     max-width: 375px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
   }
 
   /* .header-burger {
@@ -47,11 +50,11 @@
 .header-link {
   align-items: center;
   gap: 8px;
-  margin-right: auto;
+  /* margin-right: auto; */
   padding-top: 18px;
   padding-bottom: 18px;
   display: flex;
-  /* padding-right: 144px; */
+  padding-right: 144px;
 }
 svg {
   margin: 0;
@@ -97,11 +100,17 @@ svg {
 .header-list-list {
   align-items: center;
   display: flex;
+  /* flex-shrink: 0; */
 }
 .header-list {
   display: flex;
 }
 @media (min-width: 768px) {
+  .header-main {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
   .header-burger {
     display: none;
   }
@@ -109,21 +118,40 @@ svg {
     display: flex;
   }
   .header-nav {
-    margin-left: 48px;
+    /* margin-left: 48px; */
     display: flex;
   }
   .header-list {
     align-items: center;
-    gap: 32px;
+    gap: 18px;
     display: flex;
+    flex-wrap: nowrap;
   }
-  .header-main {
-    width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
+
+  .header-link {
+    padding-right: 40px;
+  }
+  .header-checkbox-thumb {
+    margin-left: 104px;
   }
 }
 
+@media (min-width: 1440px) {
+  .header-main {
+    max-width: 1440px;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  .header-link {
+    padding-right: 74px;
+  }
+  .header-list {
+    gap: 24px;
+  }
+  .header-checkbox-thumb {
+    margin-left: 748px;
+  }
+}
 .header-svg1 {
   stroke: none;
   /* fill: #f6f6f6; */
@@ -135,8 +163,6 @@ svg {
   height: 20px;
   background: linear-gradient(#4f2ee8 0%, #cdcdcd 100%);
   overflow: hidden;
-
-  /* border: 1px solid red; */
   border-radius: 34px;
   margin-right: 16px;
 }
