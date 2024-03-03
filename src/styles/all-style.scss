@@ -2,11 +2,12 @@
 @import '../base/fonts.scss';
 @import '../base/variables.scss';
 
-//=========Paginations=======
+// =========Paginations=======
 @import './paginations.scss';
-//=========Support===========
+// =========Support===========
 @import './support.scss';
-
+@import './pop-up.css';
+@import './shoplist.css';
 @import './all-categories.scss';
 @import './header.scss';
 @import './shopping-list.scss';
