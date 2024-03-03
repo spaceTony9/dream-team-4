@@ -23,10 +23,11 @@ signUpForm.addEventListener('submit', signUp);
 
 function signUp(event) {
   event.preventDefault();
+  const name = document.getElementById('signup-name').value;
   const email = document.getElementById('signup-email').value;
   const password = document.getElementById('signup-password').value;
 
-  createUserWithEmailAndPassword(auth, email, password)
+  createUserWithEmailAndPassword(auth,name, email, password)
     .then(userCredential => {
       // Signed up successfully
       const user = userCredential.user;
