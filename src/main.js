@@ -4,9 +4,9 @@
 // import './js/book-categories-rendering';
 // import './js/notificationsNotiflix.js';
 // import './js/bestsellers.js';
-
+import './js/header-chenges-theme.js';
 import './js/render-books-section.js';
 
-import './js/firebase.js'
+import './js/firebase.js';
 import { CONSTANTS } from './js/constants.js';
 import { urlCreator } from './js/api-service.js';
