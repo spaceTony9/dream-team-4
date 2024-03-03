@@ -6,7 +6,8 @@
     <title>Bookshelf</title>
     
     <script type="module" crossorigin src="/temp_name/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/temp_name/assets/index-797ac9db.css">
+    <link rel="modulepreload" crossorigin href="/temp_name/assets/vendor-9b1e7844.js">
+    <link rel="stylesheet" href="/temp_name/assets/index-d9d844a3.css">
   </head>
   <body>
     <!--  header-->
@@ -75,8 +76,8 @@
     </div>
   </div>
 </section>
-<section class="render-books-section">
-  <h5>Best Sellers <span>Books</span></h5>
+<section class="best-sellers-books-section">
+  <h5 class="best-sellers-header">Best Sellers <span>Books</span></h5>
   <div class="main-page-books-section">
     <!-- <div class="book-shelf">
       <p class="book-shelf-category"></p>
@@ -147,7 +148,11 @@
       <!--support-ukraine-->
       
     </main>
-
+    <form id="signup-form">
+  <input type="email" id="signup-email" placeholder="Email">
+  <input type="password" id="signup-password" placeholder="Password">
+  <button type="submit" class="sign-up-btn" >Sign Up</button>
+</form>
     <!--sign-up-section-->
     
 
