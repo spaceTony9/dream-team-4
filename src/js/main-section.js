@@ -1,7 +1,8 @@
 import Axios from 'axios';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { fetchBooks } from './fetchBooks.js';
-import bigPlaceholder from '../../img/big-placeholder.png';
+import bigPlaceholder from '../img/big-placeholder.png';
+import { fetchBooks } from './fetchBooks.js';
 
 const allCategoryBtn = document.querySelector('#allCategoryBtn');
 const categorieList = document.querySelector('.categorie-list');
@@ -26,15 +27,15 @@ function markupBooks(array) {
           let placeholder;
           const imgSrc = true ? `${book_image}` : placeholder;
 
-          if (arr.length === 0) {
-            placeholder = bigPlaceholder;
-            Axios.Notify.failure('We didnt find any book');
-            if (window.innerWidth < 768) {
-              placeholder = smallPlaceholder;
-            } else if (window.innerWidth < 1280) {
-              placeholder = mediumPlaceholder;
-            }
-          }
+          // if (arr.length === 0) {
+          //   placeholder = bigPlaceholder;
+          //   Axios.Notify.failure('We didnt find any book');
+          //   if (window.innerWidth < 768) {
+          //     placeholder = smallPlaceholder;
+          //   } else if (window.innerWidth < 1280) {
+          //     placeholder = mediumPlaceholder;
+          //   }
+          // }
           
           return `
           <li class="book" id="${_id}">
