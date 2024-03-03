@@ -65,6 +65,9 @@
 .name-input::placeholder {
   color: #111111;
 }
+.signup-email {
+  position: relative;
+}
 .email-input {
   border: 2px solid #111111;
   border-radius: 40px;
@@ -83,10 +86,16 @@
 .email-icon {
   stroke: #111111;
   fill: #f6f6f6;
+  position: absolute;
+  top: 30%;
+  left: 260px;
 }
 
 .email-input::placeholder {
   color: #111111;
+}
+.signup-password {
+  position: relative;
 }
 .password-input {
   border: 2px solid #111111;
@@ -105,6 +114,9 @@
 .password-icon {
   stroke: #111111;
   fill: #f6f6f6;
+  position: absolute;
+  top: 30%;
+  left: 260px;
 }
 
 .password-input::placeholder {
@@ -170,13 +182,26 @@
     width: 499px;
     height: 64px;
   }
+
   .email-input {
     width: 499px;
     height: 64px;
   }
+  .email-icon {
+    top: 35%;
+    left: 460px;
+  }
+
+  .signup-password-dark {
+    position: relative;
+  }
   .password-input {
     width: 499px;
     height: 64px;
+  }
+  .password-icon {
+    top: 35%;
+    left: 460px;
   }
   .signup-btn {
     width: 499px;
@@ -202,9 +227,17 @@
     width: 499px;
     height: 64px;
   }
+  .email-icon-dark {
+    top: 35%;
+    left: 460px;
+  }
   .password-input-dark {
     width: 499px;
     height: 64px;
+  }
+  .password-icon-dark {
+    top: 35%;
+    left: 460px;
   }
   .signup-btn-dark {
     width: 499px;
@@ -273,6 +306,9 @@
 .name-input-dark::placeholder {
   color: #f6f6f6;
 }
+.signup-email-dark {
+  position: relative;
+}
 .email-input-dark {
   border: 2px solid #f6f6f6;
   border-radius: 40px;
@@ -290,6 +326,9 @@
 }
 .email-icon-dark {
   stroke: #f6f6f6;
+  position: absolute;
+  top: 30%;
+  left: 260px;
 }
 
 .email-input-dark::placeholder {
@@ -311,6 +350,9 @@
 }
 .password-icon-dark {
   stroke: #f6f6f6;
+  position: absolute;
+  top: 30%;
+  left: 260px;
 }
 
 .password-input-dark::placeholder {
