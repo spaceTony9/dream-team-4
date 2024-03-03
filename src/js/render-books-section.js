@@ -38,12 +38,14 @@ function fillBookShelf(array) {
   return array.map(book =>
     book.books
       .map(bookdata => {
-        return `<div>
-  <img src="${bookdata.book_image}" alt="" />
-  <h2>${bookdata.title}</h2>
-  <p>${bookdata.author}</p>
+        return `<div class="book-card-container">
+  <img class="book-card-img" src="${bookdata.book_image}" alt="" />
+  <h2 class="book-card-title">${bookdata.title}</h2>
+  <p class="book-card-author">${bookdata.author}</p>
 </div>`;
       })
       .join('')
   );
 }
+
+markupPopularBooks()
