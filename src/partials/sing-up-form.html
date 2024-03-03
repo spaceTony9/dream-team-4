@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/sign-up-form.css" />
+  </head>
+  <body>
+    <div class="section-container">
+      <div class="sighup-container">
+        <button type="button" class="close-form-btn">
+          <svg class="close-form-icon" width="16" height="16">
+            <use href="../img/symbol-defs.svg#icon-close-black"></use>
+          </svg>
+        </button>
+        <form id="signup-form" class="signup-form">
+          <div class="signup-name">
+            <input
+              type="text"
+              id="signup-name"
+              placeholder="Name"
+              class="name-input"
+            />
+          </div>
+          <div class="signup-email">
+            <input
+              type="email"
+              id="signup-email"
+              placeholder="Email"
+              class="email-input"
+            />
+            <svg class="email-icon" width="18" height="18">
+              <use href="../img/symbol-defs.svg#icon-mail"></use>
+            </svg>
+          </div>
+          <div class="signup-password">
+            <input
+              type="password"
+              id="signup-password"
+              placeholder="Password"
+              class="password-input"
+            />
+            <svg class="password-icon" width="18" height="18">
+              <use href="../img/symbol-defs.svg#icon-lock"></use>
+            </svg>
+          </div>
+          <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+        <div class="sighup-links">
+          <a href="" class="signup-link">Sigh up</a>
+          <a href="" class="sighin-link">Sigh in</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
