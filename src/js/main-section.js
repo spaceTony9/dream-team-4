@@ -25,15 +25,17 @@ function markupBooks(array) {
         .map(({ _id, book_image, title, author }) => {
           let placeholder;
           const imgSrc = true ? `${book_image}` : placeholder;
+
           if (arr.length === 0) {
             placeholder = bigPlaceholder;
-            Notiflix.Notify.failure('We didnt find any book');
+            Axios.Notify.failure('We didnt find any book');
             if (window.innerWidth < 768) {
               placeholder = smallPlaceholder;
             } else if (window.innerWidth < 1280) {
               placeholder = mediumPlaceholder;
             }
           }
+          
           return `
           <li class="book" id="${_id}">
             <div class="thumb">
