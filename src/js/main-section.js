@@ -27,6 +27,7 @@ function markupBooks(array) {
           let placeholder;
           const imgSrc = true ? `${book_image}` : placeholder;
 
+// доработать
           // if (arr.length === 0) {
           //   placeholder = bigPlaceholder;
           //   Axios.Notify.failure('We didnt find any book');
