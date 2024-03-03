@@ -1,3 +1,6 @@
+import './js/sideBar.js'; // Reuta
+import './js/support/support.js'; //Dobrota
+
 // Reuta
 // import './js/APIservice.js';
 // import './js/book-categories';
@@ -10,3 +13,4 @@ import './js/render-books-section.js';
 import './js/firebase.js'
 import { CONSTANTS } from './js/constants.js';
 import { urlCreator } from './js/api-service.js';
+

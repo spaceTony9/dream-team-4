@@ -1,0 +1,45 @@
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1280px;
+$desktop-wide: 1440px;
+$sl-overlay-background: #000;
+$sl-navigation-color: darkgoldenrod;
+$milky: #f6f6f6;
+$logo-stroke-light: #f3f3f3;
+$dark-gray: #202024;
+$blackish: #111111;
+$gray: #b4afaf;
+$violet: #4f2ee8;
+$gold: #eac645;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+$header-index: 1;
+$to-top-button-index: 2;
+
+:root {
+    --accent-primary: #4f2ee8;
+    --accent-secondary: #eac645;
+}
+
+body {
+    --background-color: #{$milky};
+    --text-color: #{$blackish};
+    --circle-border-color: var(--text-color);
+    --back-button-bg-color: var(--text-color);
+    --back-button-bg-color-hover: var(--accent-primary);
+    --back-button-bg-color-active: dimgray;
+    --back-button-icon-color: #{$gray};
+    --page-bullet-bg-color: transparent;
+    --page-bullet-bg-color-active: var(--text-color);
+    --page-bullet-text-color: var(--text-color);
+    --page-bullet-text-color-active: white;
+    --forward-button-bg-color: var(--accent-secondary);
+    --forward-button-bg-color-hover: gold;
+    --forward-button-bg-color-active: darkgoldenrod;
+    --forward-button-icon-color: black;
+    --back-button-icon-color: white;
+    --back-button-bg-color: #{$blackish};
+    --page-bullet-text-color-active: black;
+    --to-top-button-shadow-color: SlateBlue;
+}
