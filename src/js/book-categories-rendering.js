@@ -1,6 +1,6 @@
 import { APIService } from './APIservice';
 
-const bookCollection = document.querySelector('.books-gallery');
+const bookCollection = document.querySelector('');
 const api = new APIService();
 
 export default async function createMarkup(category) {

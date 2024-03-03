@@ -1,7 +1,4 @@
 import { APIService } from './APIservice';
-import renderCategories from './bestsellers';
-import {reportsFailure} from './notificationsNotiflix';
-import { Loading } from 'notiflix';
 
 const api = new APIService();
 
