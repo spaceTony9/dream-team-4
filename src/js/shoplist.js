@@ -1,117 +1,122 @@
-import axios from "axios";
-import iziToast from "izitoast";
+import amazon1x from '../img/amazon-1x-min.png';
+import amazon2x from '../img/amazon-2x-min.png';
+import openbook1x from '../img/openbook-1x-min.png';
+import openbook2x from '../img/openbook-2x-min.png';
+import bookshop1x from '../img/bookshop-1x-min.png';
+import bookshop2x from '../img/bookshop-2x-min.png';
+import btnSvg from '../img/sprite.svg';
 
-// запит на бєкенд для отримання книги за id для модалки
+const amazonLink = document.querySelector('.amazon-link');
+const bookshopLink = document.querySelector('.bookshop-link');
+const applebooksLink = document.querySelector('.applebooks-link');
 
-
-
-export default async function getBookDetails(_id) {
-    const BASE_URL = "https://books-backend.p.goit.global";
-    const END_POINT = '/books/';
-    
-
-    const params = {
-        id:_id,
-    };
-
-
-const url = `${BASE_URL}${END_POINT}?${new URLSearchParams(params)}`;
-  const response = await axios.get(url);
- return response.data
-    };
-
-// запит на бєкенд для отримання книги за id для модалки
-
-// Рендеримо дані про книгу у модальному вікні
-function renderBookDetails(bookData) {
-  // Отримуємо елемент, в який будемо вставляти дані про книгу
-  const bookDetailsContainer = document.getElementById('bookDetails');
-
-  // Створюємо HTML для відображення детальної інформації про книгу
-  const bookTemplate = `
-    <img src="${bookData.book_image}" alt="Book Cover">
-    <h2>${bookData.title}</h2>
-    <p>${bookData.author}</p>
-<p>${bookData.description}</p>
-       <ul>
-      ${bookData.buy_links.map(buy_link => `<li><a href="${buy_link.url}">${buy_link.name}</a></li>`).join('')}
-    </ul>
-  `;
-
-  // Вставляємо HTML з даними про книгу в контейнер
-  bookDetailsContainer.innerHTML = bookTemplate;
-};
-
-    
-function showError(msg) { iziToast.error({
-                    title: 'Error',
-                    message: msg,
-                    position: 'topCenter'
-                });
-    
-};
-
-
-
-// Отримуємо елементи DOM
-const modal = document.getElementById('myModal');
-const closeModal = document.querySelector('.close');
-const addToShoppingListBtn = document.getElementById('addToShoppingList');
-const removeFromShoppingListBtn = document.getElementById('removeFromShoppingList');
-
-// Функція відкриття модального вікна
-export function openModal() {
-  modal.style.display = 'block';
-  document.body.style.overflow = 'hidden'; // Забороняємо прокрутку фонового контенту
-}
-
-// Функція закриття модального вікна
-function closeModalFunc() {
-  modal.style.display = 'none';
-  document.body.style.overflow = 'auto'; // Дозволяємо прокрутку фонового контенту
-}
-
-// Обробник події кліку по кнопці закриття
-closeModal.addEventListener('click', closeModalFunc);
-
-// Обробник події кліку по backdrop модального вікна
-window.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    closeModalFunc();
+function getSavedBooks() {
+  const savedBooks = localStorage.getItem('bookShopingListLS');
+  if (savedBooks) {
+    return JSON.parse(savedBooks);
   }
-});
-
-// Обробник події натискання на клавішу ESC
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeModalFunc();
-  }
-});
-
-// Функція для додавання книги до Shopping list у localStorage
-function addToShoppingList(bookId, bookDetails) {
-  const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || {};
-  shoppingList[bookId] = bookDetails; // Додаємо дані про книгу до списку покупок
-  localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
-
- // Змінюємо текст кнопки на "Remove from Shopping List"
-  addToShoppingListBtn.textContent = 'Remove from Shopping List';
+  return [];
 }
 
-// Функція для видалення книги з Shopping list у localStorage
-function removeFromShoppingList(bookId) {
-  const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || {};
-  delete shoppingList[bookId]; // Видаляємо дані про книгу зі списку покупок
-  localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+function generateBookCard(book) {
+  const { book_image, title, list_name, description, author, buy_links, _id } =
+    book;
+  return `<div class="book-card">
+  <img class="book-card-image" src="${book_image}" alt="${title}" />
+  <div class="book-card-info">
+    <div class="book-card-hero">
+      <div class="book-card-title+cat">
+        <h3 class="book-card-title">${title}</h3>
+        <p class="book-card-category">${list_name}</p>
+      </div>
+      <button class="book-card-remove" data-bookid="${_id}">
+       <svg class="book-card-remove-icon" width="28" height="28" data-bookid="${_id}">
+        <use data-name="book-card-remove" href="${btnSvg}#icon-trash-shop"></use>
+      </svg>
+      </button>
+    </div>
+    <p class="book-card-description">${description}</p>
+    <div class="book-card-footer">
+      <p class="book-card-author">Author: ${author}</p>
+      <div class="book-card-links">
+        <a class="amazon-link" target="_blank" href="${
+          buy_links.find(buyLink => buyLink.name === 'Amazon').url
+        }">
+              <img
+                class="change-color fix-amazon add-hover"
+                srcset="
+                  ${amazon1x} 1x,
+                  ${amazon2x} 2x
+                "
+                src="${amazon1x}"
+                alt="Amazon Logo"
+              />
+            </a>
+            <a class="applebooks-link" target="_blank" href="${
+              buy_links.find(buyLink => buyLink.name === 'Apple Books').url
+            }">
+              <img
+                class="change-color"
+                srcset="
+                  ${openbook1x} 1x,
+                  ${openbook2x} 2x
+                "
+                src="${openbook1x}"
+                alt="Openbook Logo"
+              />
+            </a>
+            <a class="bookshop-link" target="_blank" href="${
+              buy_links.find(buyLink => buyLink.name === 'Bookshop').url
+            }">
+              <img
+                class="change-color"
+                srcset="
+                  ${bookshop1x} 1x,
+                  ${bookshop2x} 2x
+                "
+                src="${bookshop1x}"
+                alt="Bookshop Logo"
+              />
+            </a>     
+      </div>
+    </div>
+  </div>
+</div>`;
 }
 
-// Обробник події кліку по кнопці "Add to Shopping List"
-addToShoppingListBtn.addEventListener('click', async () => {
-  const bookId = _id;
-  const bookDetails = await getBookDetails(bookId);
-  if (bookDetails) {
-    addToShoppingList(bookId, bookDetails);
-    // Оновлення інтерфейсу користувача
-  }
-});
+function renderBooks() {
+  const savedBooks = getSavedBooks();
+  const booksContainer = document.querySelector('.js-books.shop');
+  const emptyListImg = document.querySelector('.empty-shopping-list-div');
 
+  if (savedBooks.length === 0) {
+    emptyListImg.style.display = 'block';
+    booksContainer.innerHTML = '';
+  } else {
+    const booksMarkup = savedBooks.map(book => generateBookCard(book)).join('');
+    booksContainer.innerHTML = booksMarkup;
+    emptyListImg.style.display = 'none';
+  }
+}
+
+function handleRemoveBook(event) {
+  if (
+    event.target.classList.contains('book-card-remove') ||
+    event.target.classList.contains('book-card-remove-icon') ||
+    event.target.dataset.name === 'book-card-remove'
+  ) {
+    const bookId = event.target.getAttribute('data-bookid');
+    removeBookFromList(bookId);
+  }
+}
+
+function removeBookFromList(bookId) {
+  const savedBooks = getSavedBooks();
+  const updatedBooks = savedBooks.filter(book => book._id !== bookId);
+  localStorage.setItem('bookShopingListLS', JSON.stringify(updatedBooks));
+  renderBooks();
+}
+
+document.addEventListener('DOMContentLoaded', renderBooks);
+
+document.addEventListener('click', handleRemoveBook);
