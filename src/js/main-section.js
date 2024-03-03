@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { fetchBooks } from './fetchBooks.js';
+import bigPlaceholder from '../../images/big-placeholder.png';
 
 const allCategoryBtn = document.querySelector('#allCategoryBtn');
 const categorieList = document.querySelector('.categorie-list');
