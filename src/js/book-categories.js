@@ -1,22 +1,21 @@
-import { APIService } from './APIservice';
+import { APIService } from "/js/APIservice.js?t=1709491142265";
+import createMarkup from "/js/book-categories-rendering.js?t=1709494524614";
+import renderCategories from "/js/bestsellers.js?t=1709494524614";
 
 const api = new APIService();
-
 const categoriesList = document.querySelector('.book-category__list');
 
 async function getBooksCategoryList() {
   try {
-    Loading.standard('Loading...');
     const resp = await api.fetchBooksCategoryList();
-    if (!resp.ok) {
+    if (resp.status !== 200) {
       throw new Error('Failed to fetch book categories');
     }
-    Loading.remove('Loading...');
     const data = await resp.data;
     return data;
   } catch (error) {
     console.error('Error fetching book categories:', error);
-    reportsFailure('Sorry, something went wrong. Please try again later.');
+    // Замените этот console.error на функцию обратного вызова для отображения ошибки пользователю
     throw error;
   }
 }
@@ -30,13 +29,12 @@ async function getBookCategory() {
     categoriesList.insertAdjacentHTML('beforeend', markup);
   } catch (error) {
     console.error('Error getting book categories:', error);
-    reportsFailure('Sorry, something went wrong. Please try again later.');
+    // Замените этот console.error на функцию обратного вызова для отображения ошибки пользователю
   }
 }
 
 if (categoriesList) {
   getBookCategory();
-
   categoriesList.addEventListener('click', onCategoryListSearchCategory);
 }
 
@@ -45,10 +43,7 @@ async function onCategoryListSearchCategory(e) {
     if (e.target.nodeName !== 'LI') {
       return;
     }
-
     const category = e.target.textContent;
-    highlightCategory(category);
-
     if (category !== 'All categories') {
       await createMarkup(category);
     } else {
@@ -56,13 +51,12 @@ async function onCategoryListSearchCategory(e) {
     }
   } catch (error) {
     console.error('Error processing category selection:', error);
-    reportsFailure('Sorry, something went wrong. Please try again later.');
+    // Замените этот console.error на функцию обратного вызова для отображения ошибки пользователю
   }
 }
 
 export function highlightCategory(category) {
   const items = document.querySelectorAll('.book-category__list-item');
-
   for (const item of items) {
     if (item.textContent === category)
       item.classList.add('active');

@@ -1,102 +1,27 @@
-main {
+.js-list-rendering {
+    list-style-type: none;
     display: flex;
-    padding-top: 84px;
-}
-
-.best-sellers-books-section {
-    margin: 0 auto;
-    width: 335px;
-}
-
-.best-sellers-header {
-    margin-bottom: 40px;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 119%;
-    letter-spacing: -0.04em;
-}
-
-.best-sellers-header span {
-    color: #4F2EE8;
-}
-
-.book-shelf-category {
-    margin-bottom: 18px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 129%;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: #b4afaf;
-}
-
-.book-card-container {
-    margin-bottom: 40px;
-}
-
-.book-card-img {
-    margin-bottom: 14px;
-    border-radius: 8px;
-    background-size: cover;
-    background-position: center;
-    height: 485px;
-
-}
-
-.book-card-title {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 112%;
-}
-
-.book-card-author {
-    font-style: italic;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 117%;
-    letter-spacing: -0.04em;
-    color: #b4afaf;
-}
-
-@media screen and (min-width: 767px) {
-
-    main {
-        /* display: flex; */
+    justify-content: center;
+  }
+  .rendering-gap {
+    flex-wrap: wrap;
+  
+    row-gap: 40px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .rendering-gap {
+      flex-wrap: wrap;
+      column-gap: 25px;
+      row-gap: 40px;
     }
-
-    .best-sellers-books-section {
-        width: 704px;
+  }
+  
+  @media screen and (min-width: 1440px) {
+    .rendering-gap {
+      flex-wrap: wrap;
+      column-gap: 24px;
+      row-gap: 40px;
     }
-
-    .book-shelf-container {
-        display: flex;
-        flex-direction: row;
-        gap: 25px;
-    }
-
-    .book-card-container {
-        width: 218px;
-    }
-
-    .book-card-img {
-        height: 316px;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    main {
-            display: flex;
-            flex-direction: row;
-        }
-    .best-sellers-books-section {
-        width: 996px;
-    }
-
-    .book-card-container {
-        width: 180px;
-    }
-
-    .book-card-img {
-        height: 306px;
-    }
-}
+  }
+  
