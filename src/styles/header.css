@@ -1,6 +1,11 @@
 .background-js {
   background: #eac645;
 }
+
+.header-svg-dark-theme:hover {
+  fill: #fff;
+  stroke: #fff;
+}
 .container-header {
   width: 100%;
   background-color: #fff;
@@ -42,7 +47,7 @@
   padding-top: 18px;
   padding-bottom: 18px;
   display: flex;
-  padding-right: 144px;
+  padding-right: 92px;
 }
 
 svg {
@@ -95,15 +100,15 @@ svg {
   display: flex;
 }
 
-@media (min-width: 370px) {
+@media (min-width: 335px) {
   .header-main {
-    max-width: 370px;
+    max-width: 335px;
   }
 }
 
-@media (min-width: 710px) {
+@media (min-width: 768px) {
   .header-main {
-    max-width: 710px;
+    max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
   }
@@ -131,15 +136,15 @@ svg {
   }
 
   .header-checkbox-thumb {
-    margin-left: 84px;
+    margin-left: 75px;
   }
 }
 
-@media (min-width: 1384px) {
+@media (min-width: 1340px) {
   .header-main {
-    max-width: 1384px;
-    padding-left: 28px;
-    padding-right: 28px;
+    max-width: 1340px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
   .header-link {
     padding-right: 74px;
@@ -148,10 +153,10 @@ svg {
     /* gap: 24px; */
   }
   .header-checkbox-thumb {
-    margin-left: 724px;
+    margin-left: 630px;
   }
 }
-.header-svg1 {
+.header-svg-orn {
   stroke: none;
   /* fill: #f6f6f6; */
 }
@@ -163,7 +168,7 @@ svg {
   background: linear-gradient(#4f2ee8 0%, #cdcdcd 100%);
   overflow: hidden;
   border-radius: 34px;
-  margin-right: 22px;
+  margin-right: 24px;
 }
 
 .checkbox {
