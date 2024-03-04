@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const checkBox = document.querySelector('#checkbox');
 const body = document.querySelector('body');
-const header = document.querySelector('.container-header-dark');
+const header = document.querySelector('.container-header');
 
 const themeKey = 'theme';
 const lightTheme = 'light-theme';
@@ -17,5 +17,6 @@ checkBox.addEventListener('click', () => {
   if (checkBox.checked === true) {
     localStorage.setItem(themeKey, darkTheme);
     body.classList.add('dark');
+    header.classList.add('dark');
   }
 });
