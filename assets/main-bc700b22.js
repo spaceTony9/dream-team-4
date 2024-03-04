@@ -108,4 +108,4 @@ var D=(A,e,o)=>{if(!e.has(A))throw TypeError("Cannot "+o)};var f=(A,e,o)=>(D(A,e
   </li>
   `).join("")}
     </ul>`};g.Loading.standard("Loading...");const o=await(await M.fetchBooksByCategory(A)).data;g.Loading.remove("Loading...");const t=H.querySelector(".books-collection");t.innerHTML=n()}catch(e){console.log(e),g.Loading.remove("Loading..."),F("Sorry, no books  were found. Please try again.")}}
-//# sourceMappingURL=main-394dd1df.js.map
+//# sourceMappingURL=main-bc700b22.js.map
