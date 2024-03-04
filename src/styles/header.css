@@ -2,8 +2,8 @@
   background: #eac645;
 }
 .dark {
-  /* background: #111; */
   background-color: #160d0dfb;
+  color: rgba(255, 255, 255, 0.6);
 }
 .header-svg-dark-theme:hover {
   fill: #fff;
