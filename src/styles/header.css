@@ -1,10 +1,7 @@
 .background-js {
   background: #eac645;
 }
-.dark {
-  background-color: #160d0dfb;
-  color: rgba(255, 255, 255, 0.6);
-}
+
 .header-svg-dark-theme:hover {
   fill: #fff;
   stroke: #fff;
@@ -68,12 +65,12 @@ svg {
   display: block;
 }
 
-.header-title-home {
+/* .header-title-home {
   border-radius: 36px;
   padding: 8px 16px;
   display: flex;
   justify-content: center;
-}
+} */
 
 .header-title {
   /* font-family: 'DM Sans', sans-serif; */
@@ -83,8 +80,11 @@ svg {
   /* letter-spacing: -0.04em; */
   text-transform: uppercase;
   color: #111;
-  /* margin-right: 6px; */
   gap: 10px;
+  border-radius: 36px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
 }
 
 .header-btn {
@@ -213,3 +213,19 @@ svg {
 }
 
 /*******/
+
+.dark {
+  background-color: #160d0dfb;
+  color: #fff;
+  width: 100%;
+  border: 1.5px solid #fff;
+  border-radius: 0 0 8px 8px;
+}
+.dark-svg {
+  fill: #fff;
+  stroke: #fff;
+}
+
+.header-title-dark {
+  color: #fff;
+}
