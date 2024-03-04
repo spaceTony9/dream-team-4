@@ -9,6 +9,7 @@ let bookShelfContainer = null;
 export async function markupPopularBooks() {
   return await urlCreator(CONSTANTS.POPULAR_BOOKS_ALL_CATEGORIES)
     .then(({ data }) => {
+      console.log(data);
       //receiving the responce from api and marking the result
       booksSection.innerHTML = createBookShelf(data);
       bookShelfContainer = document.querySelectorAll('.book-shelf-container');
@@ -23,6 +24,7 @@ export async function markupPopularBooks() {
 // Calling api service to deliver popular books
 
 function createBookShelf(array) {
+  
   // function creates div wrapper with name of the books category
   return array
     .map(
@@ -38,7 +40,8 @@ function fillBookShelf(array) {
   return array.map(book =>
     book.books
       .map(bookdata => {
-        return `<div class="book-card-container">
+        return `<div class="book-card-container ">
+    <a class="book-item-link" href="#" data-bookid="${bookdata._id}">
   <img class="book-card-img" src="${bookdata.book_image}" alt="" />
   <h2 class="book-card-title">${bookdata.title}</h2>
   <p class="book-card-author">${bookdata.author}</p>

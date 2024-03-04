@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const jsBooks = document.querySelector('.js-books');
+const jsBooks = document.querySelector('.main-page-books-section');
 const popupModalBackground = document.querySelector('.popup-modal-background');
 const popupModalCloseButton = document.querySelector(
   '.popup-modal-close-button'
@@ -19,7 +19,7 @@ let bookData;
 let bookShopingList =
   JSON.parse(localStorage.getItem('bookShopingListLS')) || [];
 
-jsBooks.addEventListener('click', openPopupModal);
+jsBooks?.addEventListener('click', openPopupModal);
 popupModalCloseButton.addEventListener('click', closePopupModal);
 popupModalBackground.addEventListener('click', event => {
   if (event.target.classList.contains('popup-modal-background')) {
@@ -33,8 +33,10 @@ document.addEventListener('keydown', event => {
 });
 
 async function openPopupModal(event) {
+     console.log('open');
   event.preventDefault();
-  if (!event.target.parentNode.hasAttribute('data-bookid')) {
+    if (!event.target.parentNode.hasAttribute('data-bookid')) {
+        console.log('no bookid');
     return;
   }
   try {
@@ -64,9 +66,10 @@ async function openPopupModal(event) {
     // applebooksLink.setAttribute('href', applebooksURL);
     bookPresenseCheck();
     document.body.style.overflow = 'hidden'; // Додаємо стиль, щоб заборонити прокрутку
-  } catch {
-    console.log('Error');
-  }
+  } catch (e){
+    console.log(e);
+    }
+   
 }
 
 function closePopupModal() {
