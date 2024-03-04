@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookshelf</title>
+<head>
+    <title>Shopping List</title>
     
-    <script type="module" crossorigin src="/temp_name/assets/vendor-9b1e7844.js"></script>
-    <script type="module" crossorigin src="/temp_name/assets/main-1943cefd.js"></script>
-    <link rel="stylesheet" href="/temp_name/assets/main-7f047dbd.css">
-  </head>
-  <body>
+  <script type="module" crossorigin src="/temp_name/assets/vendor-9b1e7844.js"></script>
+  <script type="module" crossorigin src="/temp_name/assets/main-1943cefd.js"></script>
+  <link rel="stylesheet" href="/temp_name/assets/main-7f047dbd.css">
+</head>
+<body>
     <!--  header-->
         <header class="container-header">
       <div class="header-main">
@@ -63,76 +61,68 @@
       </div>
     </header>
 
-    <main>
-      <!--main-section-->
-      <section class="section">
-  <div class="container">
-    <div class="js-books"></div>
-    <div class="book-category__container">
-      <div class="book-category__box">
-        <ul class="book-category__list">
-          <li class="book-category__list-item">All categories</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="best-sellers-books-section">
-  <h5 class="best-sellers-header">Best Sellers <span>Books</span></h5>
-  <div class="main-page-books-section">
-    <!-- <div class="book-shelf">
-      <p class="book-shelf-category"></p>
-      <div>
-        <div>
-          <img src="" alt="" />
-          <h2></h2>
-          <p></p>
-        </div>
-        <div>
-          <img src="" alt="" />
-          <h2></h2>
-          <p></p>
-        </div>
-        <div>
-          <img src="" alt="" />
-          <h2></h2>
-          <p></p>
-        </div>
-        <div>
-          <img src="" alt="" />
-          <h2></h2>
-          <p></p>
-        </div>
-        <div>
-          <img src="" alt="" />
-          <h2></h2>
-          <p></p>
-        </div>
-      </div>
-    </div> -->
-  </div>
-</section>
-
-      <!-- modal window -->
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Shopping List</title>
-    
-</head>
-<body>
-    <!--  header-->
-    ENOENT: no such file or directory, open '/home/runner/work/temp_name/temp_name/src../src/partials/header.html'
      <!-- modal window -->
-    ENOENT: no such file or directory, open '/home/runner/work/temp_name/temp_name/src../src/partials/shoplist.html'
-    ENOENT: no such file or directory, open '/home/runner/work/temp_name/temp_name/src../src/partials/pop-up.html'
+    
+<link rel="stylesheet" href="../styles/shoplist.css" />
+<link rel="stylesheet" href="../styles/shopping-list.scss" />
 
 
+    <div class="section">
+        <div class="shopping-list-div">
+            <h1 class="best-sellers">Shopping <span class="title-color">List</span></h1>
+            <p class="loader hidden"></p>
+            <div class="empty-shopping-list-div">
+                <p class="empty-shopping-list-msg">
+                    This page is empty, add some books and proceed to order.
+                </p>
+                <img class="empty-shopping-list-img" src="../img/img-for-shoplist.svg" width="265" height="198" />
+            </div>
+            <div class="js-books shop"></div>
+        </div>
+    </div>
+    <section class="paginations">
+        <!-- Pagination buttons -->
+        <div class="paginations__container paginations__container-back">
+            <button type="button" name="startButton" class="paginations__btn paginations__btn--back"
+                aria-label="Jump to first page">
+                <svg class="paginations__icon" width="24" height="24">
+                    <use href="../img/symbol.svg#icon-double-small-left"></use>
+                </svg>
+            </button>
+            <button type="button" name="previousButton" class="paginations__btn paginations__btn--back"
+                aria-label="Previous page">
+                <svg class="paginations__icon" width="24" height="24">
+                    <use href="../img/symbol.svg#icon-small-left"></use>
+                </svg>
+            </button>
+            <!-- container for dynamic pagination page markup -->
+        </div>
+        <div class="paginations__container paginations__container-pages"></div>
+        <!-- buttons paginations -->
+        <div class="paginations__container paginations__container-end">
+            <button type="button" name="nextButton" class="paginations__btn paginations__btn--end "
+                aria-label="Next page">
+                <svg class="paginations__icon" width="24" height="24">
+                    <use href="../img/symbol.svg#icon-small-right"></use>
+                </svg>
+            </button>
+            <button type="button" name="endButton" class="paginations__btn paginations__btn--end "
+                aria-label="Jump to last page">
+                <svg class="paginations__icon" width="24" height="24">
+                    <use href="../img/symbol.svg#icon-double-small-right"></use>
+                </svg>
+            </button>
+        </div>
+    </section>
+    </div>
 
-      
+    
+    <script src="../js/pop-up.js"></script>
+
 </body>
 
-      <div class="section">
+</html>
+    <div class="section">
     <div class="popup-modal-background hidden">
         <div class="popup-modal">
             <button class="popup-modal-close-button" type="button">
@@ -171,91 +161,8 @@
         </div>
     </div>
 </div>
-      <!--support-ukraine-->
-      <div class="support">
-  <h2 class="head-title">
-    Support Ukraine
-    <svg class="icon-ua" width="20" height="32">
-      <use href="../img/symbol.svg#icon-ua"></use>
-    </svg>
-  </h2>
-
-  <div class="swiper mySwiper">
-    <ul class="swiper-wrapper support-list"></ul>
-  </div>
-
-  <button type="button" class="next swiper-next" aria-label="Swipe next">
-    <span class="icon-container">
-      <svg class="icon-down" width="20" height="32">
-        <use href="../img/symbol.svg#icon-down"></use>
-      </svg>
-    </span>
-  </button>
-</div>
 
 
-    </main>
-    <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../styles/sign-up-form.css" />
-  </head>
-  <body>
-    <div class="section-container">
-      <div class="sighup-container">
-        <button type="button" class="close-form-btn">
-          <svg class="close-form-icon" width="16" height="16">
-            <use href="../img/symbol-defs.svg#icon-close-black"></use>
-          </svg>
-        </button>
-        <form id="signup-form" class="signup-form">
-          <div class="signup-name">
-            <input
-              type="text"
-              id="signup-name"
-              placeholder="Name"
-              class="name-input"
-            />
-          </div>
-          <div class="signup-email">
-            <input
-              type="email"
-              id="signup-email"
-              placeholder="Email"
-              class="email-input"
-            />
-            <svg class="email-icon" width="18" height="18">
-              <use href="../img/symbol-defs.svg#icon-mail"></use>
-            </svg>
-          </div>
-          <div class="signup-password">
-            <input
-              type="password"
-              id="signup-password"
-              placeholder="Password"
-              class="password-input"
-            />
-            <svg class="password-icon" width="18" height="18">
-              <use href="../img/symbol-defs.svg#icon-lock"></use>
-            </svg>
-          </div>
-          <button type="submit" class="signup-btn">Sign Up</button>
-        </form>
-        <div class="sighup-links">
-          <a href="" class="signup-link">Sigh up</a>
-          <a href="" class="sighin-link">Sigh in</a>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
 
-    <!--sign-up-section-->
-    
-
-    
-  </body>
-</html>
+      
+</body>
