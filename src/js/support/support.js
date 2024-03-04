@@ -1,14 +1,10 @@
-
 import charities from './charities';
 import { Navigation, Pagination } from 'swiper/modules';
-
 import Swiper from 'swiper';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 const list = document.querySelector('.support-list');
-
 
 const html = charities.map(makeMarkup).join('');
 
