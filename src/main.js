@@ -9,7 +9,7 @@ import './js/book-categories-rendering';
 
 // import './js/bestsellers.js';
 import './js/shoplist';
-import './js/render-books-section.js';
+// import './js/render-books-section.js';
 import './js/pop-up.js';
 import './js/firebase.js';
 

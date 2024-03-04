@@ -46,74 +46,107 @@ button {
 
  /* Base  Components  */
 
-body {
+ body {
   font-family: 'DM Sans', sans-serif;
-  color: var(--main-text-color-dark-theme);
   font-weight: 400;
   font-size: 14px;
-  line-height: calc(18 / 14);
-  letter-spacing: -0.04em;
-  stroke: var(--black-color);
-  background-color: var(--background-color-light-theme);
+  display: flex;
+  flex-direction: column;
 }
-
+.section {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
 .container {
   margin-left: auto;
   margin-right: auto;
+  min-width: 320px;
+  max-width: 375px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-@media screen and (min-width: 375px) {
-  .container {
-    width: 375px;
+@media screen and (max-width: 767.98px) {
+  .group-thanks {
+    display: none;
   }
 }
 
-@media screen and (min-width: 768px) {
+
+@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+  .section {
+    padding-bottom: 100px;
+  }
   .container {
-    width: 768px;
+    max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
   }
+  .home-aside {
+    display: flex;
+    gap: 32px;
+  }
 }
-
 @media screen and (min-width: 1440px) {
   .container {
-    width: 1440px;
+    max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  .home-aside {
+    display: block;
+  }
+  .home-box {
     display: flex;
+    gap: 40px;
   }
 }
 
-.section {
-  // padding-top: 112px;
-  padding-bottom: 80px;
+.main-info {
+  display: block;
+}
+@media screen and (min-width: 768px) and (max-width: 1439.98px) {
+  .main-info {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+.group-thanks {
+  margin-left: 50px;
+  width: max-content;
+  font-size: 18px;
+  font-weight: 500; 
+   white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: type 5s steps(50, end);
+  animation: type 5s steps(50, end) infinite;
 }
 
-@media screen and (min-width: 768px) {
-  .section {
-    padding-bottom: 172px;
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+  to {
+    width: 340px;
   }
 }
 
-@media screen and (min-width: 1440px) {
-  .section {
-    // padding-top: 112px;
-    padding-bottom: 72px;
+@-webkit-keyframes type {
+  from {
+    width: 0;
   }
+     to {
+       width: 340px;
+     }
 }
 
-.section-title {
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 1;
-  letter-spacing: -0.02em;
+.sign:hover, .sign:focus {
+  color: var(--color-blue-component);
 }
 
-@media screen and (min-width: 768px) {
-  .section-title {
-    font-size: 68px;
-  }
+@media screen and (max-width: 348px) {
+  
 }
