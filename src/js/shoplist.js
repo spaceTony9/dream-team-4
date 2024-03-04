@@ -94,8 +94,11 @@ function renderBooks() {
     booksContainer.innerHTML = '';
   } else {
     const booksMarkup = savedBooks.map(book => generateBookCard(book)).join('');
-    booksContainer.innerHTML = booksMarkup;
-    emptyListImg.style.display = 'none';
+    if (booksContainer) {
+      booksContainer.innerHTML = booksMarkup;
+    };
+     if(emptyListImg){emptyListImg.style.display = 'none';}
+ 
   }
 }
 
