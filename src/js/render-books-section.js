@@ -20,27 +20,28 @@ export async function markupPopularBooks() {
         return data;
       });
     })
-    // .then(data => {
-    //   booksSection.addEventListener('click', e => {
-    //     console.log(e.target.getAttribute('data-category'));
-    //     if (
-    //       e.target.nodeName === 'BUTTON' &&
-    //       e.target.hasAttribute('data-category')
-    //     ) {
-    //       e.stopPropagation();
-    //       urlCreator(
-    //         CONSTANTS.SELECTED_CATEGORY,
-    //         e.target.getAttribute('data-category')
-    //       ).then(({ data }) => {
-    //         console.log(data);
-    //         booksSection.innerHTML = '';
-    //         booksSection.innerHTML = afterSeeMoreBtnPressed(data);
+    .then(data => {
+      booksSection.addEventListener('click', e => {
+        console.log(e.target.getAttribute('data-category'));
+        if (
+          e.target.nodeName === 'BUTTON' &&
+          e.target.hasAttribute('data-category')
+        ) {
+          e.stopPropagation();
+          urlCreator(
+            CONSTANTS.SELECTED_CATEGORY,
+            e.target.getAttribute('data-category')
+          ).then(({ data }) => {
+            console.log(data);
+            booksSection.innerHTML = '';
+            booksSection.classList.add('book-grid');
+            booksSection.innerHTML = afterSeeMoreBtnPressed(data);
 
-    //         console.log(data);
-    //       });
-    //     }
-    //   });
-    // })
+            console.log(data);
+          });
+        }
+      });
+    })
     .catch(error => console.log(error));
 }
 
@@ -91,14 +92,16 @@ function fillBookShelf(array) {
 }
 
 function afterSeeMoreBtnPressed(array) {
-  return array.map(
-    (
-      bookdata,
-      innerIndex
-    ) => `<div class="book-card-container"><img class="book-card-img" src="${bookdata.book_image}" alt="" />
+  return array
+    .map(
+      (
+        bookdata,
+        innerIndex
+      ) => `<div class="book-card-container"><img class="book-card-img" src="${bookdata.book_image}" alt="" />
                 <h2 class="book-card-title">${bookdata.title}</h2>
                 <p class="book-card-author">${bookdata.author}</p></div>`
-  ).join('');
+    )
+    .join('');
 }
 
 // function fillBookShelf(array) {

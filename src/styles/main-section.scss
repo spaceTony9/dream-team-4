@@ -1,12 +1,17 @@
 main {
-//   display: flex;
+  //   display: flex;
   padding-top: 84px;
 }
 
+.book-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .home-box {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 .best-sellers-books-section {
   margin: 0 auto;
@@ -84,9 +89,15 @@ main {
   .book-card-img {
     height: 316px;
   }
+  .book-card-container {
+    flex-basis: calc((100% - 24px) / 3);
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .book-card-container {
+    flex-basis: calc((100% - 24px) / 4);
+  }
   .home-box {
     flex-direction: row;
     gap: 40px;
