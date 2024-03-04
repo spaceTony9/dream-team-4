@@ -2,8 +2,7 @@
     z-index: 0;
     padding: 24px 40px;
     list-style-type: none;
-    width: 276px;
-    
+    width: 356px;
     max-width: 100%;
     background: radial-gradient(183.6% 183.01% at 59.76% -23.42%,
             $violet 18.03%,
@@ -44,10 +43,10 @@
         
     }
 }
-// .swiper-slide {
-//     display: flex !important;
-//     height: auto !important;
-// }
+.swiper-slide {
+    display: flex !important;
+    height: auto !important;
+}
 .icon-container {
     display: flex;
     align-items: center;
