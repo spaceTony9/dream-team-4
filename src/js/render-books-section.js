@@ -97,9 +97,10 @@ function afterSeeMoreBtnPressed(array) {
       (
         bookdata,
         innerIndex
-      ) => `<div class="book-card-container"><img class="book-card-img" src="${bookdata.book_image}" alt="" />
-                <h2 class="book-card-title">${bookdata.title}</h2>
-                <p class="book-card-author">${bookdata.author}</p></div>`
+      ) => `<div class="book-card-container" ><a class="book-item-link" href="#" data-bookid="${bookdata._id}">
+            <img class="book-card-img" src="${bookdata.book_image}" alt="" />
+            <h2 class="book-card-title">${bookdata.title}</h2>
+            <p class="book-card-author">${bookdata.author}</p></div>`
     )
     .join('');
 }
