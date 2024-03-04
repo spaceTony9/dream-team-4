@@ -1,4 +1,4 @@
-<div class="mobile-menu-wrapper visually-hidden">
+<div class="mobile-menu-wrapper header-g visually-hidden">
   <div class="mobile-menu">
     <div class="mobile-menu-header">
       <a class="mobile-menu-logo" href="./index.html">
@@ -9,10 +9,14 @@
           <use href="./img/symbol-defs.svg#icon-Bookshelf-1"></use>
         </svg>
       </a>
-
+      <div class="header-checkbox-thumb">
+        <input type="checkbox" id="checkbox" class="checkbox" />
+        <label class="theme-toggle" for="checkbox"></label>
+        <div class="checkbox-circle"></div>
+      </div>
       <button class="mobile-menu-close-btn" type="button">
         <svg class="mobile-menu-close-btn-icon" width="28" height="28">
-          <use href="../img/symbol-defs.svg#icon-lock"></use>
+          <use href="../img/symbol-defs.svg#icon-x-close"></use>
         </svg>
       </button>
     </div>
@@ -20,7 +24,7 @@
       <a class="mobile-menu-btn-content-home" href="../index.html"> Home </a>
 
       <a
-        class="mobile-menu-btn-content-favorites-shoplist"
+        class="mobile-menu-btn-content-shoplist"
         href="./partials/shoplist.html"
         >Shopping list
         <svg width="20" height="20" aria-label="">
