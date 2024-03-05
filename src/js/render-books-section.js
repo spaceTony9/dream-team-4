@@ -1,6 +1,5 @@
 import { CONSTANTS } from './constants';
 import { urlCreator } from './api-service';
-
 const booksSection = document.querySelector('.main-page-books-section');
 const bestBooksSection = document.querySelector('.best-sellers-books-section');
 
