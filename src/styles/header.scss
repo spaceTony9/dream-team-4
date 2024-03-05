@@ -67,19 +67,9 @@ svg {
   display: block;
 }
 
-/* .header-title-home {
-  border-radius: 36px;
-  padding: 8px 16px;
-  display: flex;
-  justify-content: center;
-} */
-
 .header-title {
-  /* font-family: 'DM Sans', sans-serif; */
   font-weight: 700;
-  /* font-size: 14px; */
-  /* line-height: 1.28571; */
-  /* letter-spacing: -0.04em; */
+
   text-transform: uppercase;
   color: #111;
   gap: 10px;
@@ -234,4 +224,5 @@ svg {
 
 .darkmode body {
   background-color: #202024;
+  color: #fff;
 }
