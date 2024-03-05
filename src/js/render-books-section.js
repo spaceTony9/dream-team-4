@@ -48,16 +48,17 @@ export async function markupPopularBooks() {
 // Calling api service to deliver popular books
 
 function createBookShelf(array) {
-  // function creates div wrapper with name of the books category
-  return array
-    .map(
-      book => `<div class="book-shelf">
-      <p class="book-shelf-category">${book.list_name}</p>
-      <div class="book-shelf-container"></div>
-      <button class="see-more-btn" type="button" data-category="${book.list_name}">SEE MORE</button>
-    </div>`
-    )
-    .join('');
+  let markup = '';
+  for (let index = 0; index < array.length; index++) {
+    const book = array[index];
+    const isFirstFour = index < 4 ? '' : 'not-marked'; // Add a condition to mark only the first four categories
+    markup += `<div class="book-shelf ${isFirstFour}">
+            <p class="book-shelf-category">${book.list_name}</p>
+            <div class="book-shelf-container"></div>
+            <button class="see-more-btn" type="button" data-category="${book.list_name}">SEE MORE</button>
+        </div>`;
+  }
+  return markup;
 }
 // this function fills previously created bookshelves
 function fillBookShelf(array) {
@@ -92,16 +93,27 @@ function fillBookShelf(array) {
 }
 
 function afterSeeMoreBtnPressed(array) {
+  const bookCategoryHeader = document.querySelector('.best-sellers-header');
+  console.log(array);
+  bookCategoryHeader.textContent = array[0].list_name; // Set category name once, assuming all books belong to the same category
+
+  // Split the category name into words
+  const words = bookCategoryHeader.textContent.split(' ');
+
+  // Get the last word
+  const lastWord = words.pop();
+
+  // Join the words back together with a span around the last word
+  bookCategoryHeader.innerHTML =
+    words.join(' ') + ' <span style="color: #4f2ee8;">' + lastWord + '</span>';
+
   return array
-    .map(
-      (
-        bookdata,
-        innerIndex
-      ) => `<div class="book-card-container" ><a class="book-item-link" href="#" data-bookid="${bookdata._id}">
+    .map(bookdata => {
+      return `<div class="book-card-container" ><a class="book-item-link" href="#" data-bookid="${bookdata._id}">
             <img class="book-card-img" src="${bookdata.book_image}" alt="" />
             <h2 class="book-card-title">${bookdata.title}</h2>
-            <p class="book-card-author">${bookdata.author}</p></div>`
-    )
+            <p class="book-card-author">${bookdata.author}</p></div>`;
+    })
     .join('');
 }
 

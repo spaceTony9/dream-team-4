@@ -3,6 +3,21 @@ main {
   padding-top: 84px;
 }
 
+.not-marked {
+  display: none;
+}
+.see-more-btn {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  align-items: center;
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  padding: 14px 28px;
+  width: 124px;
+  height: 46px;
+}
+
 .book-grid {
   display: flex;
   flex-wrap: wrap;
