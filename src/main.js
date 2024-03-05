@@ -18,7 +18,10 @@ import './js/shoplist';
 // import './js/render-books-section.js';
 import './js/pop-up.js';
 import './js/firebase.js';
-import './js/render-books-section.js'
+import './js/render-books-section.js';
 
 import { CONSTANTS } from './js/constants.js';
 import { urlCreator } from './js/api-service.js';
+
+import './js/categories-menu/renderCategoriesList.js';
+import './js/categories-menu/test.js';

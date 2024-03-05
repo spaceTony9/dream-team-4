@@ -4,11 +4,22 @@
       <div class="home-aside">
         <div class="js-books"></div>
         <div class="book-category__container">
-          <div class="book-category__box">
+          <!-- <div class="book-category__box">
             <ul class="book-category__list">
               <li class="book-category__list-item">All categories</li>
             </ul>
+          </div> -->
+          <div class="categories">
+            <ul class="categories_list">
+              <li>
+                <button type="button" class="category-btn all-categories-btn active-category" name="allcategories">
+                  All categories
+                </button>
+              </li>
+              <!-- >>>>>>> html inserted with handleCategoryClick.js <<<<<<< -->
+            </ul>
           </div>
+
         </div>
         <div class="support">
           <h2 class="head-title">
@@ -22,11 +33,7 @@
             <ul class="swiper-wrapper support-list"></ul>
           </div>
 
-          <button
-            type="button"
-            class="next swiper-next"
-            aria-label="Swipe next"
-          >
+          <button type="button" class="next swiper-next" aria-label="Swipe next">
             <span class="icon-container">
               <svg class="icon-down" width="20" height="32">
                 <use href="../img/symbol.svg#icon-down"></use>

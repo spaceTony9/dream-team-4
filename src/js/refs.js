@@ -19,6 +19,10 @@ export default function () {
     endButton: document.querySelector("button[name='endButton']"),
     activButton: document.querySelector('.active'),
 
-    singUpBtn: document.querySelector('.userbar-btn'),
+    //Categories menu:
+    allCategoriesBtn: document.querySelector('button[name=allcategories]'),
+    categoryListEl: document.querySelector('.categories_list'),
+    categoriesListContainer: document.querySelector('.categories'),
+    categoryContainerEl: document.querySelector('.content-rendering-container'),
   };
 }
