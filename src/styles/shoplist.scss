@@ -1,7 +1,7 @@
-.shopping-list-div {
-    // padding-top: 100px;
-    // padding-left: 32px;
-}
+// .shopping-list-div {
+//     padding-top: 100px;
+//     padding-left: 32px;
+// }
 
 .best-sellers {
     padding-bottom: 20px;
@@ -245,5 +245,10 @@
 
     .book-card-description {
         width: 808px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .support {
+        display: none;
     }
 }
