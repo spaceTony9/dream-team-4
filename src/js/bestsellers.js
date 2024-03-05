@@ -3,7 +3,7 @@ import { highlightCategory } from './book-categories';
 
 import {reportsFailure} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
-
+import { showLoader, hideLoader } from './loader'
 const api = new APIService();
 
 const bookGallery = document.querySelector('.books-gallery');

@@ -1,9 +1,11 @@
 import { APIService } from './APIservice';
-
+import { showLoader, x } from './loader'
 const bookCollection = document.querySelector('');
 const api = new APIService();
 
 export default async function createMarkup(category) {
+  
+  showLoader('.books .loader');
   const res = await api.fetchBooksByCategory(category);
   const books = await res.data;
 
@@ -45,4 +47,5 @@ export default async function createMarkup(category) {
   }
 
   bookCollection.innerHTML = collectionMarkup();
+  hideLoader('.books .loader');
 }
