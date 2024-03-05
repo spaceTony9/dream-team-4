@@ -1,6 +1,6 @@
 main {
   //   display: flex;
-  padding-top: 84px;
+  padding-top: 94px;
 }
 
 .not-marked {
@@ -110,6 +110,12 @@ main {
 }
 
 @media screen and (min-width: 1440px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    // align-items: center;
+    justify-content: center;
+  }
   .book-card-container {
     flex-basis: calc((100% - 24px) / 4);
   }
@@ -118,10 +124,6 @@ main {
     gap: 40px;
   }
 
-  main {
-    display: flex;
-    flex-direction: row;
-  }
   .best-sellers-books-section {
     width: 996px;
   }

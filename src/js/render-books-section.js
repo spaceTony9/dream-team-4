@@ -48,17 +48,15 @@ export async function markupPopularBooks() {
 // Calling api service to deliver popular books
 
 function createBookShelf(array) {
-  let markup = '';
-  for (let index = 0; index < array.length; index++) {
-    const book = array[index];
-    const isFirstFour = index < 4 ? '' : 'not-marked'; // Add a condition to mark only the first four categories
-    markup += `<div class="book-shelf ${isFirstFour}">
+  return array
+    .map(book => {
+      return `<div class="book-shelf">
             <p class="book-shelf-category">${book.list_name}</p>
             <div class="book-shelf-container"></div>
             <button class="see-more-btn" type="button" data-category="${book.list_name}">SEE MORE</button>
         </div>`;
-  }
-  return markup;
+    })
+    .join('');
 }
 // this function fills previously created bookshelves
 function fillBookShelf(array) {
