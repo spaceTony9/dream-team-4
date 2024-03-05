@@ -6,13 +6,13 @@
     <title>Bookshelf</title>
     
     <script type="module" crossorigin src="/temp_name/assets/vendor-19ab7633.js"></script>
-    <script type="module" crossorigin src="/temp_name/assets/main-0d812708.js"></script>
+    <script type="module" crossorigin src="/temp_name/assets/main-a4bcb6bd.js"></script>
     <link rel="stylesheet" href="/temp_name/assets/vendor-0ded8c46.css">
-    <link rel="stylesheet" href="/temp_name/assets/main-45906d62.css">
+    <link rel="stylesheet" href="/temp_name/assets/main-163bc04c.css">
   </head>
   <body>
     <!--  header-->
-    <header class="container-header">
+    <header class="container-header container">
   <div class="header-main">
     <a class="header-link" href="../index.html">
       <svg class="header-svg1" width="24" height="24">
@@ -30,10 +30,7 @@
           </a>
         </li>
         <li class="header-list-list">
-          <a
-            class="header-title-home header-title"
-            href="../partials/shoplist.html"
-            >Shopping list
+          <a class="header-title-home header-title" href="../partials/shoplist.html">Shopping list
             <svg width="20" height="20" aria-label="">
               <use href="../img/symbol-defs.svg#icon-shopping"></use>
             </svg>
@@ -63,7 +60,6 @@
     </div>
   </div>
 </header>
-
     <main>
       <!--main-section-->
       <section class="section">
@@ -72,11 +68,22 @@
       <div class="home-aside">
         <div class="js-books"></div>
         <div class="book-category__container">
-          <div class="book-category__box">
+          <!-- <div class="book-category__box">
             <ul class="book-category__list">
               <li class="book-category__list-item">All categories</li>
             </ul>
+          </div> -->
+          <div class="categories">
+            <ul class="categories_list">
+              <li>
+                <button type="button" class="category-btn all-categories-btn active-category" name="allcategories">
+                  All categories
+                </button>
+              </li>
+              <!-- >>>>>>> html inserted with handleCategoryClick.js <<<<<<< -->
+            </ul>
           </div>
+
         </div>
         <div class="support">
           <h2 class="head-title">
@@ -90,11 +97,7 @@
             <ul class="swiper-wrapper support-list"></ul>
           </div>
 
-          <button
-            type="button"
-            class="next swiper-next"
-            aria-label="Swipe next"
-          >
+          <button type="button" class="next swiper-next" aria-label="Swipe next">
             <span class="icon-container">
               <svg class="icon-down" width="20" height="32">
                 <use href="../img/symbol.svg#icon-down"></use>
@@ -140,7 +143,6 @@
         </div>
       </div>
     </div> -->
-
       <!-- modal window -->
     </main>
         <div class="section-container">
