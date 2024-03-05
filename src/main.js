@@ -13,6 +13,13 @@ import './js/render-books-section.js';
 import './js/pop-up.js';
 import './js/firebase.js';
 
+import './js/bestsellers.js';
+import './js/shoplist';
+// import './js/render-books-section.js';
+import './js/pop-up.js';
+import './js/firebase.js';
+import './js/mobile-menu.js';
+
 import { CONSTANTS } from './js/constants.js';
 import { urlCreator } from './js/api-service.js';
 
