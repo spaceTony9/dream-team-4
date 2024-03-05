@@ -32,6 +32,14 @@ document.addEventListener('keydown', event => {
   }
 });
 
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('open-modal-btn')) {
+    const bookId = event.target.dataset.bookid;
+    openPopupModal(bookId);
+  }
+});
+
+
 async function openPopupModal(event) {
      console.log('open');
   event.preventDefault();

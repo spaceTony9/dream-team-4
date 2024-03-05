@@ -9,7 +9,6 @@
   cursor: pointer;
   user-select: none;
 }
-
 .book-category__list-item:hover,
 .book-category__list-item:focus {
   color: var(--brand-color);
@@ -25,6 +24,7 @@
 
 .book-category__container {
   padding-bottom: 40px;
+  width: 337px;
 }
 
 .book-category__box {
@@ -34,6 +34,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .home-aside {
+    display: flex;
+  }
   .book-category__box {
     width: 337px;
     height: 495px;
@@ -42,6 +45,9 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .home-aside {
+    flex-direction: column;
+  }
   .book-category__box {
     width: 356px;
   }

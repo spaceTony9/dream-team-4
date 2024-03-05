@@ -1,6 +1,9 @@
 .background-js {
   background: #eac645;
 }
+.header-main {
+  padding: 0, 24px, 0, 24px;
+}
 
 .header-svg-dark-theme:hover {
   fill: #fff;
@@ -14,6 +17,7 @@
   transition: all 0.3s;
   position: fixed;
   width: 100%;
+  z-index: 999;
 }
 
 .container-header-dark {
@@ -145,6 +149,9 @@ svg {
 }
 
 @media (min-width: 1440px) {
+  .header-main {
+    justify-content: center;
+  }
   /* .header-main {
     max-width: 1440px;
     padding-left: 24px;
