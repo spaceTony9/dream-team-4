@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Shopping List</title>
     
   <script type="module" crossorigin src="/temp_name/assets/vendor-19ab7633.js"></script>
-  <script type="module" crossorigin src="/temp_name/assets/main-7f8610e3.js"></script>
-  <link rel="stylesheet" href="/temp_name/assets/main-afec1963.css">
+  <script type="module" crossorigin src="/temp_name/assets/main-d4a659d9.js"></script>
+  <link rel="stylesheet" href="/temp_name/assets/main-22c346ee.css">
   <link rel="stylesheet" href="/temp_name/assets/vendor-0ded8c46.css">
 </head>
+
 <body>
 
-    
+
     <!--  header-->
     <header class="container-header">
   <div class="header-main container">
@@ -72,104 +74,79 @@
   </div>
 </header>
 
-     <!-- modal window -->
-        <main>
-      <div class="support">
-        <h2 class="head-title">
-          Support Ukraine
-          <svg class="icon-ua" width="20" height="32">
-            <use href="../img/symbol.svg#icon-ua"></use>
-          </svg>
-        </h2>
+    <!-- modal window -->
+    <main>
+  <div class="support">
+    <h2 class="head-title">
+      Support Ukraine
+      <svg class="icon-ua" width="20" height="32">
+        <use href="../img/symbol.svg#icon-ua"></use>
+      </svg>
+    </h2>
 
-        <div class="swiper mySwiper">
-          <ul class="swiper-wrapper support-list"></ul>
+    <div class="swiper mySwiper">
+      <ul class="swiper-wrapper support-list"></ul>
+    </div>
+
+    <button type="button" class="next swiper-next" aria-label="Swipe next">
+      <span class="icon-container">
+        <svg class="icon-down" width="20" height="32">
+          <use href="../img/symbol.svg#icon-down"></use>
+        </svg>
+      </span>
+    </button>
+  </div>
+  <div class="shopping-list-wrapper">
+    <div class="section sec-shop-list">
+      <div class="shopping-list-div">
+        <h1 class="best-sellers">
+          Shopping <span class="title-color">List</span>
+        </h1>
+        <p class="loader hidden"></p>
+        <div class="empty-shopping-list-div">
+          <p class="empty-shopping-list-msg">
+            This page is empty, add some books and proceed to order.
+          </p>
+          <img class="empty-shopping-list-img" src="../img/img-for-shoplist.svg" width="265" height="198" />
         </div>
-
-        <button type="button" class="next swiper-next" aria-label="Swipe next">
-          <span class="icon-container">
-            <svg class="icon-down" width="20" height="32">
-              <use href="../img/symbol.svg#icon-down"></use>
-            </svg>
-          </span>
+        <div class="js-books shop"></div>
+      </div>
+    </div>
+    <section class="paginations">
+      <!-- Pagination buttons -->
+      <div class="paginations__container paginations__container-back">
+        <button type="button" name="startButton" class="paginations__btn paginations__btn--back"
+          aria-label="Jump to first page">
+          <svg class="paginations__icon" width="24" height="24">
+            <use href="../img/symbol.svg#icon-double-small-left"></use>
+          </svg>
+        </button>
+        <button type="button" name="previousButton" class="paginations__btn paginations__btn--back"
+          aria-label="Previous page">
+          <svg class="paginations__icon" width="24" height="24">
+            <use href="../img/symbol.svg#icon-small-left"></use>
+          </svg>
+        </button>
+        <!-- container for dynamic pagination page markup -->
+      </div>
+      <div class="paginations__container paginations__container-pages"></div>
+      <!-- buttons paginations -->
+      <div class="paginations__container paginations__container-end">
+        <button type="button" name="nextButton" class="paginations__btn paginations__btn--end" aria-label="Next page">
+          <svg class="paginations__icon" width="24" height="24">
+            <use href="../img/symbol.svg#icon-small-right"></use>
+          </svg>
+        </button>
+        <button type="button" name="endButton" class="paginations__btn paginations__btn--end"
+          aria-label="Jump to last page">
+          <svg class="paginations__icon" width="24" height="24">
+            <use href="../img/symbol.svg#icon-double-small-right"></use>
+          </svg>
         </button>
       </div>
-      <div class="shopping-list-wrapper">
-        <div class="section">
-          <div class="shopping-list-div">
-            <h1 class="best-sellers">
-              Shopping <span class="title-color">List</span>
-            </h1>
-            <p class="loader hidden"></p>
-            <div class="empty-shopping-list-div">
-              <p class="empty-shopping-list-msg">
-                This page is empty, add some books and proceed to order.
-              </p>
-              <img
-                class="empty-shopping-list-img"
-                src="../img/img-for-shoplist.svg"
-                width="265"
-                height="198"
-              />
-            </div>
-            <div class="js-books shop"></div>
-          </div>
-        </div>
-        <section class="paginations">
-          <!-- Pagination buttons -->
-          <div class="paginations__container paginations__container-back">
-            <button
-              type="button"
-              name="startButton"
-              class="paginations__btn paginations__btn--back"
-              aria-label="Jump to first page"
-            >
-              <svg class="paginations__icon" width="24" height="24">
-                <use href="../img/symbol.svg#icon-double-small-left"></use>
-              </svg>
-            </button>
-            <button
-              type="button"
-              name="previousButton"
-              class="paginations__btn paginations__btn--back"
-              aria-label="Previous page"
-            >
-              <svg class="paginations__icon" width="24" height="24">
-                <use href="../img/symbol.svg#icon-small-left"></use>
-              </svg>
-            </button>
-            <!-- container for dynamic pagination page markup -->
-          </div>
-          <div
-            class="paginations__container paginations__container-pages"
-          ></div>
-          <!-- buttons paginations -->
-          <div class="paginations__container paginations__container-end">
-            <button
-              type="button"
-              name="nextButton"
-              class="paginations__btn paginations__btn--end"
-              aria-label="Next page"
-            >
-              <svg class="paginations__icon" width="24" height="24">
-                <use href="../img/symbol.svg#icon-small-right"></use>
-              </svg>
-            </button>
-            <button
-              type="button"
-              name="endButton"
-              class="paginations__btn paginations__btn--end"
-              aria-label="Jump to last page"
-            >
-              <svg class="paginations__icon" width="24" height="24">
-                <use href="../img/symbol.svg#icon-double-small-right"></use>
-              </svg>
-            </button>
-          </div>
-        </section>
-      </div>
-    </main>
-
+    </section>
+  </div>
+</main>
     <div class="section">
     <div class="popup-modal-background hidden">
         <div class="popup-modal">
@@ -214,4 +191,7 @@
 
 </body>
 
- </html>
+
+
+
+</html>
