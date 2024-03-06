@@ -1,0 +1,31 @@
+.support {
+  display: none;
+}
+
+@media (min-width: 1440px) {
+  .support {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .cont-sec-shop {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin: 0 auto;
+  }
+
+}
+
+// @media screen and (min-width: 375px) and (max-width: 767px) {
+//   .cont-sec-shop {
+//     width: 375px;
+//     padding-left: 32px;
+//     padding-right: 32px;
+//     margin: 0 auto;
+//   }
+//   .book-card {
+//     width: 375px;
+//   }
+// }
+
