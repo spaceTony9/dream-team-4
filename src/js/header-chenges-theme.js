@@ -1,9 +1,9 @@
-import axios from 'axios';
+// import axios from 'axios';
 
 (function (window, document, undefined) {
   let darkMode = localStorage.getItem('my_darkMode');
   if (darkMode) {
-    document.documentElement.className += ' darkmode';
+    document.documentElement.className += 'darkmode';
   }
 })(window, document);
 
@@ -60,3 +60,4 @@ import axios from 'axios';
 //     headerTitleShop.classList.add('header-title-dark');
 //   }
 // });
+
