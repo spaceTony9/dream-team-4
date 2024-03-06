@@ -1,7 +1,7 @@
-.shopping-list-div {
-    // padding-top: 100px;
-    // padding-left: 32px;
-}
+// .shopping-list-div {
+//     padding-top: 100px;
+//     padding-left: 32px;
+// }
 
 .best-sellers {
     padding-bottom: 20px;
@@ -248,6 +248,8 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+
 .loader {
     width: 48px;
     height: 48px;
@@ -270,4 +272,5 @@
     border-radius: 50%;
     border: 3px solid transparent;
     border-bottom-color: #4F2EE8;
+}
 }

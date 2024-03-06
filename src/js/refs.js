@@ -3,6 +3,7 @@ export default function () {
     // Support Ukraine
     supportUkraineCnt: document.querySelector('.support-list'),
     // Paginations
+    divEl: document.querySelector('.shopping__list'),
     paginationsSection: document.querySelector('.paginations'),
     paginationContainerPages: document.querySelector(
       '.paginations__container-pages'
