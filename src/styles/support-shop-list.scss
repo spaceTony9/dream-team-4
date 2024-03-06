@@ -7,3 +7,11 @@
     display: block;
   }
 }
+@media (min-width: 765px)  and (max-width: 1439px){
+ .cont-sec-shop{
+  width: 768px;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin: 0 auto;
+}
+ }

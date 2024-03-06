@@ -2,61 +2,74 @@ import { CONSTANTS } from './constants';
 import { urlCreator } from './api-service';
 const booksSection = document.querySelector('.main-page-books-section');
 const bestBooksSection = document.querySelector('.best-sellers-books-section');
-
+const mainPageHeader = document.querySelector('.best-sellers-header');
 const categoriesContainer = document.querySelector('.categories');
 
 let bookShelfContainer = null;
 
 //Just export this function to your code and call it
 export async function markupPopularBooks() {
-  return await urlCreator(CONSTANTS.POPULAR_BOOKS_ALL_CATEGORIES)
+  return await urlCreator(CONSTANTS.POPULAR_BOOKS_ALL_CATEGORIES) // Calling api service to deliver popular books
     .then(({ data }) => {
-      console.log(data);
+      mainPageHeader.innerHTML = 'Best Sellers <span>Books</span>';
+      // bestBooksSection.innerHTML = '';
       //receiving the responce from api and marking the result
+      // bestBooksSection.insertAdjacentHTML(
+      //   'afterbegin',
+      //   '<h5 class="best-sellers-header">Best Sellers <span>Books</span></h5>'
+      // );
       booksSection.innerHTML = createBookShelf(data);
       bookShelfContainer = document.querySelectorAll('.book-shelf-container');
       bookShelfContainer.forEach((container, index) => {
         const categoryData = data[index]; // Get the data for the current category
         container.innerHTML = fillBookShelf([categoryData]);
+
         return data;
       });
+      return data;
     })
     .then(data => {
       booksSection.addEventListener('click', e => {
-        console.log(e.target.getAttribute('data-category'));
         if (
           e.target.nodeName === 'BUTTON' &&
           e.target.hasAttribute('data-category')
         ) {
-          e.stopPropagation();
-          urlCreator(
-            CONSTANTS.SELECTED_CATEGORY,
-            e.target.getAttribute('data-category')
-          ).then(({ data }) => {
-            console.log(data);
-            booksSection.innerHTML = '';
-            booksSection.classList.add('book-grid');
-            booksSection.innerHTML = markupSelectedCategory(data);
-
-            console.log(data);
-          });
+          const category = e.target.getAttribute('data-category');
+          const categoryData = data.find(item => item.list_name === category);
+          booksSection.innerHTML = '';
+          // Add more books to the container
+          booksSection.innerHTML += fillBookShelf([categoryData]);
         }
       });
+      console.log(data);
     })
     .catch(error => console.log(error));
 }
 
-// Calling api service to deliver popular books
+booksSection.addEventListener('click', e => {
+  if (
+    e.target.nodeName === 'BUTTON' &&
+    e.target.hasAttribute('data-category')
+  ) {
+    console.log('hello');
+    // const category = e.target.getAttribute('data-category');
+    // const categoryData = data.find(item => item.list_name === category);
+    // booksSection.innerHTML = '';
+    // // Add more books to the container
+    // booksSection.innerHTML += fillBookShelf([categoryData]);
+  }
+});
 
 function createBookShelf(array) {
+  // function creates div wrapper with name of the books category
   return array
-    .map(book => {
-      return `<div class="book-shelf">
-            <p class="book-shelf-category">${book.list_name}</p>
-            <div class="book-shelf-container"></div>
-            <button class="see-more-btn" type="button" data-category="${book.list_name}">SEE MORE</button>
-        </div>`;
-    })
+    .map(
+      book => `<div class="book-shelf">
+      <p class="book-shelf-category">${book.list_name}</p>
+      <div class="book-shelf-container"></div>
+      <button class="see-more-btn" type="button" data-category="${book.list_name}">SEE MORE</button>
+    </div>`
+    )
     .join('');
 }
 // this function fills previously created bookshelves
@@ -72,6 +85,11 @@ export function markupCategories() {
           booksSection.innerHTML = markupSelectedCategory(data);
         })
         .catch(error => console.error(error));
+    } else if (
+      e.target.nodeName === 'BUTTON' &&
+      e.target.hasAttribute('name')
+    ) {
+      markupPopularBooks();
     }
   });
 }
@@ -95,18 +113,17 @@ function fillBookShelf(array) {
 
         return `<div class="book-card-container${
           isMarked ? ' marked' : ''
-        }" style="display: ${
-          isDisplayed ? 'block' : 'none'
-        };"><a class="book-item-link" href="#" data-bookid="${bookdata._id}">
-            <img class="book-card-img" src="${bookdata.book_image}" alt="" />
-            <h2 class="book-card-title">${bookdata.title}</h2>
-            <p class="book-card-author">${bookdata.author}</p>
-        </div>`;
+        }" style="display: ${isDisplayed ? 'block' : 'none'};">
+                <img class="book-card-img" src="${
+                  bookdata.book_image
+                }" alt="" />
+                <h2 class="book-card-title">${bookdata.title}</h2>
+                <p class="book-card-author">${bookdata.author}</p>
+              </div>`;
       })
       .join('');
   });
 }
-
 
 function markupSelectedCategory(array) {
   const bookCategoryHeader = document.querySelector('.best-sellers-header');
@@ -148,3 +165,13 @@ function markupSelectedCategory(array) {
 //   );
 // }
 markupPopularBooks();
+
+// function afterSeeMoreBtnPressed(array) {
+//   return array
+//     .map(
+//       book => `<div class="book-card-container"><img class="book-card-img" src="${bookdata.book_image}" alt="" />
+//                 <h2 class="book-card-title">${bookdata.title}</h2>
+//                 <p class="book-card-author">${bookdata.author}</p></div>`
+//     )
+//     .join('');
+// }
