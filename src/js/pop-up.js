@@ -39,12 +39,11 @@ document.addEventListener('click', function (event) {
   }
 });
 
-
 async function openPopupModal(event) {
-     console.log('open');
+  console.log('open');
   event.preventDefault();
-    if (!event.target.parentNode.hasAttribute('data-bookid')) {
-        console.log('no bookid');
+  if (!event.target.parentNode.hasAttribute('data-bookid')) {
+    console.log('no bookid');
     return;
   }
   try {
@@ -74,10 +73,9 @@ async function openPopupModal(event) {
     // applebooksLink.setAttribute('href', applebooksURL);
     bookPresenseCheck();
     document.body.style.overflow = 'hidden'; // Додаємо стиль, щоб заборонити прокрутку
-  } catch (e){
+  } catch (e) {
     console.log(e);
-    }
-   
+  }
 }
 
 function closePopupModal() {

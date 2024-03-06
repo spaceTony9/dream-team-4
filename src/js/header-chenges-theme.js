@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 
 (function (window, document, undefined) {
   let darkMode = localStorage.getItem('my_darkMode');
