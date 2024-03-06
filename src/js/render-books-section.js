@@ -1,14 +1,9 @@
 import { CONSTANTS } from './constants';
 import { urlCreator } from './api-service';
-<<<<<<< Updated upstream
-
-const booksSection = document.querySelector('.main-page-books-section');
-=======
 const booksSection = document.querySelector('.main-page-books-section');
 const bestBooksSection = document.querySelector('.best-sellers-books-section');
 const mainPageHeader = document.querySelector('.best-sellers-header');
 const categoriesContainer = document.querySelector('.categories');
->>>>>>> Stashed changes
 
 let bookShelfContainer = null;
 
@@ -16,11 +11,8 @@ let bookShelfContainer = null;
 export async function markupPopularBooks() {
   return await urlCreator(CONSTANTS.POPULAR_BOOKS_ALL_CATEGORIES) // Calling api service to deliver popular books
     .then(({ data }) => {
-<<<<<<< Updated upstream
-=======
       mainPageHeader.innerHTML = 'Best Sellers <span>Books</span>';
       // bestBooksSection.innerHTML = '';
->>>>>>> Stashed changes
       //receiving the responce from api and marking the result
       // bestBooksSection.insertAdjacentHTML(
       //   'afterbegin',
@@ -31,11 +23,8 @@ export async function markupPopularBooks() {
       bookShelfContainer.forEach((container, index) => {
         const categoryData = data[index]; // Get the data for the current category
         container.innerHTML = fillBookShelf([categoryData]);
-<<<<<<< Updated upstream
-=======
 
         return data;
->>>>>>> Stashed changes
       });
       return data;
     })
@@ -83,8 +72,6 @@ function createBookShelf(array) {
     )
     .join('');
 }
-<<<<<<< Updated upstream
-=======
 // this function fills previously created bookshelves
 
 export function markupCategories() {
@@ -106,7 +93,6 @@ export function markupCategories() {
     }
   });
 }
->>>>>>> Stashed changes
 
 function fillBookShelf(array) {
   return array.map((book, index) => {
@@ -139,8 +125,6 @@ function fillBookShelf(array) {
   });
 }
 
-<<<<<<< Updated upstream
-=======
 function markupSelectedCategory(array) {
   const bookCategoryHeader = document.querySelector('.best-sellers-header');
   console.log(array);
@@ -180,7 +164,6 @@ function markupSelectedCategory(array) {
 //       .join('')
 //   );
 // }
->>>>>>> Stashed changes
 markupPopularBooks();
 
 // function afterSeeMoreBtnPressed(array) {
