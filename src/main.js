@@ -7,7 +7,7 @@ import './js/support/support.js'; //Dobrota
 // import './js/book-categories-rendering';
 // import './js/notificationsNotiflix.js';
 
-// import './js/bestsellers.js';
+import './js/bestsellers.js';
 import './js/shoplist';
 import './js/render-books-section.js';
 import './js/pop-up.js';
