@@ -76,7 +76,6 @@ export function markupCategories() {
   });
 }
 
-markupCategories();
 function fillBookShelf(array) {
   return array.map((book, index) => {
     return book.books
