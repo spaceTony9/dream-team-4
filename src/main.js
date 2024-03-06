@@ -21,3 +21,4 @@ import { urlCreator } from './js/api-service.js';
 
 import './js/categories-menu/renderCategoriesList.js';
 import './js/categories-menu/test.js';
+import './js/signin.js';
