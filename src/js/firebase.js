@@ -27,10 +27,11 @@ function signUp(event) {
   const email = document.getElementById('signup-email').value;
   const password = document.getElementById('signup-password').value;
 
-  createUserWithEmailAndPassword(auth,name, email, password)
+  createUserWithEmailAndPassword(auth, email, password,name)
     .then(userCredential => {
       // Signed up successfully
-      const user = userCredential.user;
+      const user = userCredential.user
+      userCredential.user.displayName = name;
       console.log('Signed up:', user);
     })
     .catch(error => {
