@@ -3,6 +3,8 @@ import { urlCreator } from './api-service';
 const booksSection = document.querySelector('.main-page-books-section');
 const bestBooksSection = document.querySelector('.best-sellers-books-section');
 
+const categoriesContainer = document.querySelector('.categories');
+
 let bookShelfContainer = null;
 
 //Just export this function to your code and call it
@@ -34,7 +36,7 @@ export async function markupPopularBooks() {
             console.log(data);
             booksSection.innerHTML = '';
             booksSection.classList.add('book-grid');
-            booksSection.innerHTML = afterSeeMoreBtnPressed(data);
+            booksSection.innerHTML = markupSelectedCategory(data);
 
             console.log(data);
           });
@@ -58,6 +60,23 @@ function createBookShelf(array) {
     .join('');
 }
 // this function fills previously created bookshelves
+
+export function markupCategories() {
+  return categoriesContainer.addEventListener('click', e => {
+    if (e.target.nodeName === 'BUTTON' && e.target.hasAttribute('data-id')) {
+      urlCreator(CONSTANTS.SELECTED_CATEGORY, e.target.getAttribute('data-id'))
+        .then(({ data }) => {
+          e.stopPropagation();
+          booksSection.innerHTML = '';
+          booksSection.classList.add('book-grid');
+          booksSection.innerHTML = markupSelectedCategory(data);
+        })
+        .catch(error => console.error(error));
+    }
+  });
+}
+
+markupCategories();
 function fillBookShelf(array) {
   return array.map((book, index) => {
     return book.books
@@ -89,7 +108,8 @@ function fillBookShelf(array) {
   });
 }
 
-function afterSeeMoreBtnPressed(array) {
+
+function markupSelectedCategory(array) {
   const bookCategoryHeader = document.querySelector('.best-sellers-header');
   console.log(array);
   bookCategoryHeader.textContent = array[0].list_name; // Set category name once, assuming all books belong to the same category

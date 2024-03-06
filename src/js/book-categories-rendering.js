@@ -1,5 +1,5 @@
 import { APIService } from './APIservice';
-import { showLoader, x } from './loader'
+import { showLoader, x } from './loader';
 const bookCollection = document.querySelector('');
 const api = new APIService();
 
