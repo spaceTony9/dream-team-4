@@ -71,10 +71,10 @@ signUpFormContainer.addEventListener('click', e => {
   closeSighupBtn.addEventListener('click', () => {
     sectionContainer.classList.add('is-hidden');
   });
-  if (e.target.getAttribute('class') === 'sighin-link') {
+  if (e.target.getAttribute('class') === 'signin-link-unactive') {
     sectionContainer.classList.add('log-in-container');
     fillInSingInForm();
-  } else if (e.target.getAttribute('class') === 'signup-link') {
+  } else if (e.target.getAttribute('class') === 'signup-link-unactive') {
     fillInSingUpForm();
   }
 });
@@ -137,8 +137,8 @@ function fillInSingUpForm() {
             <button type="submit" class="signup-btn">Sign Up</button>
           </form>
           <div class="sighup-links">
-          <button type="button" class="signup-link">Sign up</button>
-          <button type="button" class="sighin-link">Sign in</button>`;
+          <button type="button" class="signup-link-active">Sign up</button>
+          <button type="button" class="signin-link-unactive">Sign in</button>`;
 }
 function fillInSingInForm() {
   signUpFormContainer.innerHTML = ` <button type="button" class="close-form-btn">
@@ -170,11 +170,11 @@ function fillInSingInForm() {
           <use href="../img/symbol-defs.svg#icon-lock"></use>
         </svg>
       </div>
-      <button type="submit" class="signup-btn">Sign Up</button>
+      <button type="submit" class="signup-btn">Sign In</button>
     </form>
     <div class="sighup-links">
-    <button type="button" class="signup-link">Sign up</button>
-    <button type="button" class="sighin-link">Sign in</button>`;
+    <button type="button" class="signup-link-unactive">Sign up</button>
+    <button type="button" class="signin-link-active">Sign in</button>`;
 }
 
 function signupTemplate() {
@@ -219,8 +219,8 @@ function signupTemplate() {
       <button type="submit" class="signup-btn">Sign Up</button>
     </form>
     <div class="sighup-links">
-    <button type="button" class="signup-link">Sign up</button>
-    <button type="button" class="sighin-link">Sign in</button>
+    <button type="button" class="signup-link-active">Sign up</button>
+    <button type="button" class="signin-link-unactive">Sign in</button>
     </div>
   </div>`;
 }
