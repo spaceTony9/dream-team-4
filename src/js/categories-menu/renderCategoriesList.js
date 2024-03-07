@@ -1,8 +1,8 @@
 import axios from 'axios';
 import getRefs from '../refs';
-
+import { markupCategories } from '../render-books-section';
 const { categoryListEl } = getRefs();
-
+// const categoriesContainer = document.querySelector('.categories');
 async function categoriesArray() {
   try {
     const { data } = await axios.get(
@@ -38,3 +38,4 @@ export async function renderCategories() {
 }
 
 renderCategories();
+markupCategories();
