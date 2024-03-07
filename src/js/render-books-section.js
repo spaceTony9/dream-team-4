@@ -1,5 +1,6 @@
 import { CONSTANTS } from './constants';
 import { urlCreator } from './api-service';
+import { notificationError } from './categories-menu/notifications';
 const booksSection = document.querySelector('.main-page-books-section');
 const bestBooksSection = document.querySelector('.best-sellers-books-section');
 const mainPageHeader = document.querySelector('.best-sellers-header');
@@ -11,17 +12,23 @@ let bookShelfContainer = null;
 export async function markupPopularBooks() {
   return await urlCreator(CONSTANTS.POPULAR_BOOKS_ALL_CATEGORIES) // Calling api service to deliver popular books
     .then(({ data }) => {
-      mainPageHeader.innerHTML = 'Best Sellers <span>Books</span>';
-      booksSection.innerHTML = createBookShelf(data);
-      bookShelfContainer = document.querySelectorAll('.book-shelf-container');
-      bookShelfContainer.forEach((container, index) => {
-        const categoryData = data[index]; // Get the data for the current category
-        container.innerHTML = fillBookShelf([categoryData]);
+      data = []
+      if (data.length) {
+        mainPageHeader.innerHTML = 'Best Sellers <span>Books</span>';
+        booksSection.innerHTML = createBookShelf(data);
+        bookShelfContainer = document.querySelectorAll('.book-shelf-container');
+        bookShelfContainer.forEach((container, index) => {
+          const categoryData = data[index]; // Get the data for the current category
+          container.innerHTML = fillBookShelf([categoryData]);
 
+          return data;
+        });
+        markupBooksAf;
+        terSeeMoreBtn();
         return data;
-      });
-      markupBooksAfterSeeMoreBtn();
-      return data;
+      } else {
+        notificationError();
+      }
     })
     // .then(data => {
     //   booksSection.addEventListener('click', e => {
@@ -68,10 +75,14 @@ export function markupBooksAfterSeeMoreBtn() {
         e.target.getAttribute('data-category')
       )
         .then(({ data }) => {
-          e.stopPropagation();
-          booksSection.innerHTML = '';
-          booksSection.classList.add('book-grid');
-          booksSection.innerHTML = markupSelectedCategory(data);
+          if (data.length) {
+            e.stopPropagation();
+            booksSection.innerHTML = '';
+            booksSection.classList.add('book-grid');
+            booksSection.innerHTML = markupSelectedCategory(data);
+          } else {
+            notificationError()
+          }
         })
         .catch(error => console.error(error));
     }
