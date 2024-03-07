@@ -1,0 +1,42 @@
+.to-top-target {
+  height: 15vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 50px;
+  z-index: $to-top-button-index;
+  height: 54px;
+  width: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#4F2EE8;
+  border: 5px solid transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px var(--to-top-button-shadow-color);
+  
+  &:hover,
+  &:focus {
+    scale: 1.2;
+  }
+  transition: opacity 300ms ease-in, visibility 300ms ease-in, scale 1s;
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px){
+.back-to-top{
+  height: 37px;
+  width: 37px;
+  right: 20px;
+  bottom: 60px;
+}
+}
+  

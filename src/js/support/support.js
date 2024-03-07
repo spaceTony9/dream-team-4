@@ -5,8 +5,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 const list = document.querySelector('.support-list');
-
 const html = charities.map(makeMarkup).join('');
+const button = document.querySelector('.swiper-next');
+const buttonIcon = button.querySelector('.icon-down');
+let clickCount = 0;
 
 function makeMarkup({ url, title, img }, index) {
   const digits = (index + 1).toString().padStart(2, '0');
@@ -37,11 +39,21 @@ const swiper = new Swiper('.swiper', {
   effect: 'slide',
   breakpoints: {
     480: {
-      slidesPerView: 6,
+      slidesPerView: 5.9999,
     },
   },
   modules: [Navigation],
   navigation: {
     nextEl: '.swiper-next',
   },
+});
+button.addEventListener('click', () => {
+  clickCount++;
+
+  if (clickCount === 3) {
+    buttonIcon.classList.add('rotateSvg');
+  } else if (clickCount === 4) {
+    buttonIcon.classList.remove('rotateSvg');
+    clickCount = 0; // Скидаємо лічильник, щоб почати знову
+  }
 });
