@@ -108,12 +108,11 @@ main {
     height: 316px;
   }
   .book-card-container {
-    // flex-basis: calc((100% - 20px) / 3);
   }
   .book-grid {
     display: flex;
     flex-wrap: wrap;
-     gap: 24px;
+    gap: 24px;
   }
 }
 
@@ -128,7 +127,8 @@ main {
     gap: 24px;
   }
   .book-card-container {
-    flex-basis: calc((100% - 24px) / 4);
+    width: 100%;
+    // flex-basis: calc((100% - 24px) / 5);
   }
   .home-box {
     flex-direction: row;
