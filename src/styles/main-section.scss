@@ -57,6 +57,7 @@ main {
 
 .book-card-container {
   margin-bottom: 40px;
+  width: 180px;
 }
 
 .book-card-img {
@@ -65,6 +66,11 @@ main {
   background-size: cover;
   background-position: center;
   height: 485px;
+  width: 100%; /* Set width to 100% to occupy the width of the container */
+  height: auto; /* Allow the height to adjust proportionally */
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
 }
 
 .book-card-title {
@@ -115,6 +121,9 @@ main {
     flex-direction: row;
     // align-items: center;
     justify-content: center;
+  }
+  .book-grid {
+    gap: 24px;
   }
   .book-card-container {
     flex-basis: calc((100% - 24px) / 4);
