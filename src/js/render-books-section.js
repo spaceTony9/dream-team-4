@@ -31,6 +31,7 @@ export async function markupPopularBooks() {
           const category = e.target.getAttribute('data-category');
           const categoryData = data.find(item => item.list_name === category);
           booksSection.innerHTML = '';
+          booksSection.classList.add('book-grid'); // Add book-grid class
           // Add more books to the container
           booksSection.innerHTML += fillBookShelf([categoryData]);
         }
