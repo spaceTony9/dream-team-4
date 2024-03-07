@@ -22,7 +22,7 @@ export async function markupPopularBooks() {
 
           return data;
         });
-        markupBooksAf;
+        markupBooksAfterSeeMoreBtn();
         terSeeMoreBtn();
         return data;
       } else {

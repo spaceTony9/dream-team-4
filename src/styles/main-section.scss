@@ -21,7 +21,7 @@ main {
 .book-grid {
   display: flex;
   flex-wrap: wrap;
-  flex-basis: calc((100% - 20px) / 3);
+  // flex-basis: calc((100% - 20px) / 3);
 }
 
 .home-box {
@@ -100,7 +100,6 @@ main {
     flex-direction: row;
     gap: 25px;
   }
-
   .book-card-container {
     width: 218px;
   }
@@ -109,13 +108,13 @@ main {
     height: 316px;
   }
   .book-card-container {
-    flex-basis: calc((100% - 20px) / 3);
+    // flex-basis: calc((100% - 20px) / 3);
   }
   .book-grid {
-  display: flex;
-  flex-wrap: wrap;
-  flex-basis: calc((100% - 20px) / 3);
-}
+    display: flex;
+    flex-wrap: wrap;
+     gap: 24px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
