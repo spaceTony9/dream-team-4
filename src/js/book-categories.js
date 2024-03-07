@@ -1,19 +1,23 @@
 import { APIService } from './APIservice';
-
+import { showLoader, hideLoader } from './loader';
 const api = new APIService();
 
 const categoriesList = document.querySelector('.book-category__list');
 
 async function getBooksCategoryList() {
   try {
+    showLoader();
     Loading.standard('Loading...');
     const resp = await api.fetchBooksCategoryList();
     if (!resp.ok) {
       throw new Error('Failed to fetch book categories');
     }
+    hideLoader();
     Loading.remove('Loading...');
     const data = await resp.data;
+    
     return data;
+    
   } catch (error) {
     console.error('Error fetching book categories:', error);
     reportsFailure('Sorry, something went wrong. Please try again later.');
@@ -22,13 +26,15 @@ async function getBooksCategoryList() {
 }
 
 async function getBookCategory() {
-  try {
+  try {l
+   
     const categories = await getBooksCategoryList();
     const markup = categories
       .map(cat => `<li class="book-category__list-item">${cat.list_name}</li>`)
       .join('');
     categoriesList.insertAdjacentHTML('beforeend', markup);
-  } catch (error) {
+    //  loader.style.display = 'none';
+  } catch (error) {  
     console.error('Error getting book categories:', error);
     reportsFailure('Sorry, something went wrong. Please try again later.');
   }
@@ -42,10 +48,11 @@ if (categoriesList) {
 
 async function onCategoryListSearchCategory(e) {
   try {
+   
     if (e.target.nodeName !== 'LI') {
       return;
     }
-
+ 
     const category = e.target.textContent;
     highlightCategory(category);
 
@@ -54,7 +61,9 @@ async function onCategoryListSearchCategory(e) {
     } else {
       await renderCategories();
     }
+  
   } catch (error) {
+    
     console.error('Error processing category selection:', error);
     reportsFailure('Sorry, something went wrong. Please try again later.');
   }

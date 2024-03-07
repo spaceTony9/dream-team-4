@@ -1,5 +1,7 @@
 import { CONSTANTS } from './constants';
 import { urlCreator } from './api-service';
+import { showLoader, hideLoader } from './loader';
+
 const booksSection = document.querySelector('.main-page-books-section');
 const bestBooksSection = document.querySelector('.best-sellers-books-section');
 
@@ -9,6 +11,7 @@ let bookShelfContainer = null;
 
 //Just export this function to your code and call it
 export async function markupPopularBooks() {
+   
   return await urlCreator(CONSTANTS.POPULAR_BOOKS_ALL_CATEGORIES)
     .then(({ data }) => {
       console.log(data);
@@ -37,7 +40,7 @@ export async function markupPopularBooks() {
             booksSection.innerHTML = '';
             booksSection.classList.add('book-grid');
             booksSection.innerHTML = markupSelectedCategory(data);
-
+             
             console.log(data);
           });
         }
@@ -62,6 +65,7 @@ function createBookShelf(array) {
 // this function fills previously created bookshelves
 
 export function markupCategories() {
+  showLoader()
   return categoriesContainer.addEventListener('click', e => {
     if (e.target.nodeName === 'BUTTON' && e.target.hasAttribute('data-id')) {
       urlCreator(CONSTANTS.SELECTED_CATEGORY, e.target.getAttribute('data-id'))
@@ -70,6 +74,7 @@ export function markupCategories() {
           booksSection.innerHTML = '';
           booksSection.classList.add('book-grid');
           booksSection.innerHTML = markupSelectedCategory(data);
+           hideLoader()
         })
         .catch(error => console.error(error));
     }

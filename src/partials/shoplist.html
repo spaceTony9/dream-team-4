@@ -22,23 +22,25 @@
   <div class="shopping-list-wrapper">
     <div class="section sec-shop-list">
       <div class="shopping-list-div">
+            
         <h1 class="best-sellers">
           Shopping <span class="title-color">List</span>
         </h1>
-        <p class="loader hidden"></p>
+  
         <div class="empty-shopping-list-div">
           <p class="empty-shopping-list-msg">
             This page is empty, add some books and proceed to order.
           </p>
           <img class="empty-shopping-list-img" src="../img/img-for-shoplist.svg" width="265" height="198" />
         </div>
+        <span class="js-loader spinner-border spinner-border-sm spinner hidden" role="status" aria-hidden="true"></span>
         <div class="js-books shop"></div>
       </div>
     </div>
     <section class="paginations">
-      <!-- Pagination buttons -->
+             <!-- Pagination buttons -->
       <div class="paginations__container paginations__container-back">
-        <button type="button" name="startButton" class="paginations__btn paginations__btn--back"
+             <button type="button" name="startButton" class="paginations__btn paginations__btn--back"
           aria-label="Jump to first page">
           <svg class="paginations__icon" width="24" height="24">
             <use href="../img/symbol.svg#icon-double-small-left"></use>
@@ -50,6 +52,7 @@
             <use href="../img/symbol.svg#icon-small-left"></use>
           </svg>
         </button>
+        <span class="js-loader spinner-border spinner-border-sm spinner hidden" role="status" aria-hidden="true"></span>
         <!-- container for dynamic pagination page markup -->
       </div>
       <div class="paginations__container paginations__container-pages"></div>

@@ -1,19 +1,20 @@
 import { APIService } from './APIservice';
-import { showLoader, x } from './loader';
+import { showLoader, hideLoader } from './loader';
 const bookCollection = document.querySelector('');
 const api = new APIService();
 
 export default async function createMarkup(category) {
   
-  showLoader('.books .loader');
+  
   const res = await api.fetchBooksByCategory(category);
   const books = await res.data;
-
+ 
   function removeLastWord(category) {
     let words = category.split(' ');
     words.pop();
     let result = words.join(' ');
     return result;
+    
   }
   
   function LastWord(category) {
@@ -47,5 +48,5 @@ export default async function createMarkup(category) {
   }
 
   bookCollection.innerHTML = collectionMarkup();
-  hideLoader('.books .loader');
+    
 }

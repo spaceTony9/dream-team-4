@@ -1,21 +1,27 @@
 import { APIService } from './APIservice';
 import { highlightCategory } from './book-categories';
+import { showLoader, hideLoader } from './loader';
 
 import {reportsFailure} from './notificationsNotiflix';
 import { Loading } from 'notiflix';
-import { showLoader, hideLoader } from './loader'
-const api = new APIService();
+ const api = new APIService();
 
 const bookGallery = document.querySelector('.books-gallery');
 
 async function getBestSellers() {
+
+  showLoader();
+
   try {
+ 
     Loading.standard('Loading...');
     const response = await api.fetchBestSellersBooks();
     Loading.remove('Loading...');
-  const bestSellers = await response.data;
+    const bestSellers = await response.data;
+    
     return bestSellers;
-  } catch (error) {
+
+  } catch (error) {   hideLoader();
     console.log(error);
     Loading.remove('Loading...');
      reportsFailure('Sorry, no books were found. Please try again.')
@@ -55,7 +61,7 @@ function createBookCategoryMarkup(category) {
 export default async function renderCategories() {
   let bookCategories = '<ul class="top-books rendering-gap js-list-rendering">';
   try {
-  const topBooks = await getBestSellers();
+     const topBooks = await getBestSellers();
   for (let category of topBooks) {
     bookCategories += createBookCategoryMarkup(category);
   }
@@ -65,7 +71,8 @@ export default async function renderCategories() {
     bookCollection.className = "books-collection";
   bookCollection.innerHTML = bookCategories;
   bookCollection.addEventListener('click', onSeeMoreBtnClick);
-  bookGallery.appendChild(bookCollection);
+    bookGallery.appendChild(bookCollection);
+    
 } catch (error) {
     console.log(error);
   }
@@ -74,8 +81,9 @@ export default async function renderCategories() {
 
 
 if (bookGallery) {
-  try {
+  try {   
     renderCategories();
+     
   } catch (error) {
     console.log(error);
     }
@@ -87,14 +95,15 @@ async function onSeeMoreBtnClick(e) {
   }
   const target = e.target;
   try {
+    
   if (target.matches('button[data-category]')) {
     const category = target.dataset.category;
-
-    const titleCollection = bookGallery.querySelector('.collection-title')
+     const titleCollection = bookGallery.querySelector('.collection-title');
     titleCollection.innerHTML = `${removeLastWord(category)} <span>${LastWord(category)}</span>`;
 
     highlightCategory(category);
     await createBooksOnSeeMoreBtn(category);
+    
     }
   } catch (error) {
     console.log(error);
@@ -116,10 +125,9 @@ function LastWord(category) {
   
 async function createBooksOnSeeMoreBtn(category) {
   try {
-
-    Loading.standard('Loading...');
   const res = await api.fetchBooksByCategory(category);
     const books = await res.data;
+    hideLoader();
     Loading.remove('Loading...');
   function collectionMarkup() {
     return `
@@ -144,11 +152,12 @@ async function createBooksOnSeeMoreBtn(category) {
       .join('')}
     </ul>`;
   }
-  const bookCollection = bookGallery.querySelector(".books-collection");
+    const bookCollection = bookGallery.querySelector(".books-collection");
+    
     bookCollection.innerHTML = collectionMarkup();
   } catch (error) {
     console.log(error);
-     Loading.remove('Loading...');
+     
     reportsFailure('Sorry, no books  were found. Please try again.');
     }
 }

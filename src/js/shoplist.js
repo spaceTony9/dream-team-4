@@ -6,6 +6,8 @@ import bookshop1x from '../img/bookshop-1x-min.png';
 import bookshop2x from '../img/bookshop-2x-min.png';
 import btnSvg from '../img/sprite.svg';
 // import getRefs from './refs.js';
+import { showLoader, hideLoader } from './loader';
+
 
 const amazonLink = document.querySelector('.amazon-link');
 const bookshopLink = document.querySelector('.bookshop-link');
@@ -104,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderBooks(page = 1) {
+ 
     const savedBooks = getSavedBooks();
     const startIndex = (page - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -135,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderPagination(savedBooks.length, page);
+   
   }
 
   function renderPagination(totalItems, currentPage) {

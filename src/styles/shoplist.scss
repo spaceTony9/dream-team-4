@@ -246,31 +246,40 @@
     .book-card-description {
         width: 808px;
     }
+};
+.hidden {
+    display: none;
+    opacity: 0;
 }
 
-@media screen and (max-width: 768px) {
-
-.loader {
+.js-loader {
     width: 48px;
     height: 48px;
-    border: 3px solid #FFF;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
+
 }
 
-.loader::after {
-    content: '';
-    box-sizing: border-box;
-    position: absolute;
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    position: relative;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    border: 3px solid transparent;
-    border-bottom-color: #4F2EE8;
+    margin-left: auto;
+    margin-right: auto;
+
 }
-}
+
+;
