@@ -12,7 +12,6 @@ let bookShelfContainer = null;
 export async function markupPopularBooks() {
   return await urlCreator(CONSTANTS.POPULAR_BOOKS_ALL_CATEGORIES) // Calling api service to deliver popular books
     .then(({ data }) => {
-      data = []
       if (data.length) {
         mainPageHeader.innerHTML = 'Best Sellers <span>Books</span>';
         booksSection.innerHTML = createBookShelf(data);
