@@ -117,11 +117,11 @@ function signinTemplate(){
     return `
    
   <div class="sighup-container">
-    <button type="button" class="close-form-btn">
-      <svg class="close-form-icon" width="16" height="16">
-        <use href="../img/symbol-defs.svg#icon-close-black"></use>
-      </svg>
-    </button>
+  <button type="button" class="close-form-btn">
+  <svg class="close-form-icon" width="16" height="16">
+    <use href="../img/symbol-defs.svg#icon-close-black"></use>
+  </svg>
+</button>
     <form id="signup-form" class="signup-form">
       <div class="signup-email">
         <input
@@ -162,9 +162,10 @@ const signinLink = document.querySelector('.sighin-link');
 
 
 
-signinLink.addEventListener('click',  (e)=>{
+signinLink.addEventListener('click',  ()=>{
     
         sectionContainer.innerHTML = signinTemplate();
     
 
 } );
+
