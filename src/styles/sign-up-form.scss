@@ -1,9 +1,8 @@
 .section-container {
-  
   height: 100%;
   width: 100%;
   background-color: #4f2ee8;
- position: fixed;
+  position: fixed;
   display: flex;
   justify-content: center;
   top: 0;
@@ -31,6 +30,7 @@
   letter-spacing: -0.01em;
   text-transform: uppercase;
 }
+
 .signup-form {
   width: 295px;
   display: flex;
@@ -44,11 +44,11 @@
   text-transform: uppercase;
 }
 .close-form-btn {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   position: relative;
   left: 280px;
-  border-radius: 50%;
+  // border-radius: 50%;
   background-color: transparent;
   border-color: transparent;
 }
@@ -177,6 +177,9 @@
     width: 579px;
     height: 516px;
     border: 2px solid #111111;
+  }
+  .log-in-container {
+    height: 395 !important;
   }
   .close-form-btn {
     width: 28px;
