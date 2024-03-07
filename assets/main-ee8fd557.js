@@ -160,4 +160,4 @@ import{S as Z,N as T,a as B,i as j,g as V,c as z}from"./vendor-19ab7633.js";(fun
   </div>
 
     `}document.querySelector(".sighup-link");const Ye=document.querySelector(".sighin-link");Ye.addEventListener("click",e=>{b.innerHTML=Re()});
-//# sourceMappingURL=main-602c3f40.js.map
+//# sourceMappingURL=main-ee8fd557.js.map
