@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { hideLoader } from './loader';
+import {showLoader, hideLoader } from './loader';
 
 const jsBooks = document.querySelector('.main-page-books-section');
 const popupModalBackground = document.querySelector('.popup-modal-background');

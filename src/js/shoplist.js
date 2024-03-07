@@ -12,7 +12,7 @@ import { showLoader, hideLoader } from './loader';
 const amazonLink = document.querySelector('.amazon-link');
 const bookshopLink = document.querySelector('.bookshop-link');
 const applebooksLink = document.querySelector('.applebooks-link');
-
+showLoader();
 document.addEventListener('DOMContentLoaded', () => {
   const amazonLink = document.querySelector('.amazon-link');
   const bookshopLink = document.querySelector('.bookshop-link');
@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getSavedBooks() {
     const savedBooks = localStorage.getItem('bookShopingListLS');
+    
     if (savedBooks) {
+      hideLoader();
       return JSON.parse(savedBooks);
     }
     return [];

@@ -1,4 +1,4 @@
-
+const loader = document.querySelector('.js-loader');
 function showLoader() {
     loader.classList.remove('hidden');
 };
