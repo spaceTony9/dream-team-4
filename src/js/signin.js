@@ -63,22 +63,18 @@ const signUpFormContainer = document.querySelector('.sighup-container');
 
 signinBtn.addEventListener('click', e => {
   sectionContainer.classList.remove('is-hidden');
-  
   fillInSingUpForm();
-  const signUpForm = document.querySelector('#signup-form');
 });
 
 signUpFormContainer.addEventListener('click', e => {
-  const closeSighupBtn = e.target.closest('.close-form-btn');
-  if (closeSighupBtn) {
+  const closeSighupBtn = document.querySelector('.close-form-btn');
+  closeSighupBtn.addEventListener('click', () => {
     sectionContainer.classList.add('is-hidden');
-    return;
-  }
-
-  if (e.target.getAttribute('class') === 'sighin-link') {
+  });
+  if (e.target.getAttribute('class') === 'signin-link-unactive') {
     sectionContainer.classList.add('log-in-container');
     fillInSingInForm();
-  } else if (e.target.getAttribute('class') === 'signup-link') {
+  } else if (e.target.getAttribute('class') === 'signup-link-unactive') {
     fillInSingUpForm();
   }
 });
@@ -104,8 +100,8 @@ function fillInSingUpForm() {
   signUpFormContainer.innerHTML = `
   <button type="button" class="close-form-btn ">
   <span><svg class="close-form-icon " width="16" height="16">
-  <use href="./img/symbol-defs.svg#icon-close-black"></use></svg></span>
-
+  <use href="../img/symbol-defs.svg#icon-close-black"></use></svg></span>
+  
   </button>
           <form id="signup-form" class="signup-form">
             <div class="signup-name">
@@ -141,8 +137,8 @@ function fillInSingUpForm() {
             <button type="submit" class="signup-btn">Sign Up</button>
           </form>
           <div class="sighup-links">
-          <button type="button" class="signup-link">Sign up</button>
-          <button type="button" class="sighin-link">Sign in</button>`;
+          <button type="button" class="signup-link-active">Sign up</button>
+          <button type="button" class="signin-link-unactive">Sign in</button>`;
 }
 function fillInSingInForm() {
   signUpFormContainer.innerHTML = ` <button type="button" class="close-form-btn">
@@ -174,11 +170,11 @@ function fillInSingInForm() {
           <use href="../img/symbol-defs.svg#icon-lock"></use>
         </svg>
       </div>
-      <button type="submit" class="signup-btn">Sign Up</button>
+      <button type="submit" class="signup-btn">Sign IN</button>
     </form>
     <div class="sighup-links">
-    <button type="button" class="signup-link">Sign up</button>
-    <button type="button" class="sighin-link">Sign in</button>`;
+    <button type="button" class="signup-link-unactive">Sign up</button>
+    <button type="button" class="signin-link-active">Sign in</button>`;
 }
 
 function signupTemplate() {
@@ -223,8 +219,8 @@ function signupTemplate() {
       <button type="submit" class="signup-btn">Sign Up</button>
     </form>
     <div class="sighup-links">
-    <button type="button" class="signup-link">Sign up</button>
-    <button type="button" class="sighin-link">Sign in</button>
+    <button type="button" class="signup-link-active">Sign up</button>
+    <button type="button" class="signin-link-unactive">Sign in</button>
     </div>
   </div>`;
 }
@@ -272,27 +268,3 @@ function signupTemplate() {
 //     `;
 // }
 
-
-// // Function to initialize sign-up form
-// function initializeSignUpForm() {
-//   const signUpForm = document.getElementById('signup-form');
-//   if (signUpForm) {
-//     signUpForm.addEventListener('submit', signUp);
-//   } else {
-//     console.error("Sign-up form not found");
-//   }
-// }
-
-// // Event listener for showing sign-up form
-// document.addEventListener('DOMContentLoaded', () => {
-//   initializeSignUpForm();
-// });
-
-// export function signUp(event) {
-//   event.preventDefault();
-//   const name = document.getElementById('signup-name').value;
-//   const email = document.getElementById('signup-email').value;
-//   const password = document.getElementById('signup-password').value;
-
-//   // Implement Firebase sign-up logic here
-// }
