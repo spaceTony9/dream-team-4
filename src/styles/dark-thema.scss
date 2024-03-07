@@ -75,3 +75,57 @@
 .darkmode .best-sellers {
   color: #fff;
 }
+
+.darkmode .sighup-container {
+  
+  background-color: #202024;
+}
+
+.darkmode .close-form-icon {
+  stroke: #f6f6f6;
+  fill: #f6f6f6;
+}
+.darkmode .name-input {
+  border: 2px solid #f6f6f6;
+  background-color: #111111;
+  color: #f6f6f6;
+}
+.darkmode .name-input::placeholder {
+  color: #f6f6f6;
+}
+
+.darkmode .email-input {
+  border: 2px solid #f6f6f6;
+  background-color: #111111;
+  color: #f6f6f6;
+}
+.darkmode .email-icon {
+  stroke: #f6f6f6;
+  fill: #111111;
+}
+
+.darkmode .email-input::placeholder {
+  color: #f6f6f6;
+}
+.darkmode .password-input {
+  border: 2px solid #f6f6f6;
+  background-color: #111111;
+  color: #f6f6f6;
+}
+.darkmode .password-icon {
+  stroke: #f6f6f6;
+  fill: #111111;
+}
+
+.darkmode .password-input::placeholder {
+  color: #f6f6f6;
+}
+.darkmode .signup-btn {
+  background-color: #f6f6f6;
+  color: #111111;
+}
+@media screen and (min-width: 768px){
+ .darkmode .sighup-container {
+    border: 2px solid #f6f6f6;
+  }
+}
