@@ -12,12 +12,6 @@ export async function markupPopularBooks() {
   return await urlCreator(CONSTANTS.POPULAR_BOOKS_ALL_CATEGORIES) // Calling api service to deliver popular books
     .then(({ data }) => {
       mainPageHeader.innerHTML = 'Best Sellers <span>Books</span>';
-      // bestBooksSection.innerHTML = '';
-      //receiving the responce from api and marking the result
-      // bestBooksSection.insertAdjacentHTML(
-      //   'afterbegin',
-      //   '<h5 class="best-sellers-header">Best Sellers <span>Books</span></h5>'
-      // );
       booksSection.innerHTML = createBookShelf(data);
       bookShelfContainer = document.querySelectorAll('.book-shelf-container');
       bookShelfContainer.forEach((container, index) => {
@@ -45,20 +39,6 @@ export async function markupPopularBooks() {
     })
     .catch(error => console.log(error));
 }
-
-booksSection.addEventListener('click', e => {
-  if (
-    e.target.nodeName === 'BUTTON' &&
-    e.target.hasAttribute('data-category')
-  ) {
-    console.log('hello');
-    // const category = e.target.getAttribute('data-category');
-    // const categoryData = data.find(item => item.list_name === category);
-    // booksSection.innerHTML = '';
-    // // Add more books to the container
-    // booksSection.innerHTML += fillBookShelf([categoryData]);
-  }
-});
 
 function createBookShelf(array) {
   // function creates div wrapper with name of the books category
@@ -113,12 +93,12 @@ function fillBookShelf(array) {
 
         return `<div class="book-card-container${
           isMarked ? ' marked' : ''
-        }" style="display: ${isDisplayed ? 'block' : 'none'};">
-                <img class="book-card-img" src="${
-                  bookdata.book_image
-                }" alt="" />
-                <h2 class="book-card-title">${bookdata.title}</h2>
-                <p class="book-card-author">${bookdata.author}</p>
+        }" style="display: ${
+          isDisplayed ? 'block' : 'none'
+        };"><a class="book-item-link" href="#" data-bookid="${bookdata._id}">
+            <img class="book-card-img" src="${bookdata.book_image}" alt="" />
+            <h2 class="book-card-title">${bookdata.title}</h2>
+            <p class="book-card-author">${bookdata.author}</p>
               </div>`;
       })
       .join('');

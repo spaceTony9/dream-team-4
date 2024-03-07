@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/temp_name/",
+    "build": "vite build --base=/dream-team-4/",
     "preview": "vite preview"
   },
   "devDependencies": {
