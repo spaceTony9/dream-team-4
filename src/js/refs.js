@@ -1,8 +1,10 @@
 export default function () {
   return {
-    // Support Ukraine
+    scrollToTopButton: document.querySelector('.back-to-top'),
+    toTopTarget: document.querySelector('.to-topchik'),
+
     supportUkraineCnt: document.querySelector('.support-list'),
-    // Paginations
+
     divEl: document.querySelector('.shopping__list'),
     paginationsSection: document.querySelector('.paginations'),
     paginationContainerPages: document.querySelector(
@@ -20,7 +22,6 @@ export default function () {
     endButton: document.querySelector("button[name='endButton']"),
     activButton: document.querySelector('.active'),
 
-    //Categories menu:
     allCategoriesBtn: document.querySelector('button[name=allcategories]'),
     categoryListEl: document.querySelector('.categories_list'),
     categoriesListContainer: document.querySelector('.categories'),

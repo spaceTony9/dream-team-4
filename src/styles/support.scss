@@ -24,6 +24,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .next {
     display: flex;
     justify-content: center;
@@ -35,7 +36,7 @@
     margin: 0 auto;
 }
 .swiper {
-    height: 188px;
+    height: 292px;
     margin: 40px 0;
 }
 @media screen and (min-width: $tablet) {
@@ -79,4 +80,9 @@
     height: 32px;
     display: flex;
     align-items: center;
+}
+
+.rotateSvg {
+    transform: rotateX(180deg);
+    transition: transform 0.5s ease;
 }
