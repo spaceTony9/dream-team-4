@@ -12,7 +12,7 @@ import './js/shoplist';
 import './js/render-books-section.js';
 import './js/pop-up.js';
 import './js/firebase.js';
-
+import './js/categories-menu/activeCategoriesList.js';
 import './js/mobile-menu.js';
 import './js/header-chenges-theme.js';
 

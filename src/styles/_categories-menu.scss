@@ -53,7 +53,7 @@
 
   &:hover,
   &:focus {
-    color: var(--active-category-color);
+    // color: var(--active-category-color);
     transform: scale(1.03);
     transform-origin: center left;
   }
@@ -65,9 +65,8 @@
 
 .active-category {
   text-transform: uppercase;
-  color: var(--active-category-color);
+  color: #4F2EE8;
   font-weight: $bold;
-
   white-space: nowrap;
   width: 100%;
   overflow: hidden;
