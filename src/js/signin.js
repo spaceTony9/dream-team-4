@@ -67,17 +67,19 @@ signinBtn.addEventListener('click', e => {
 });
 
 signUpFormContainer.addEventListener('click', e => {
-  const closeSighupBtn = document.querySelector('.close-form-btn');
-  closeSighupBtn.addEventListener('click', () => {
+  const closeSighupBtn = e.target.closest('.close-form-btn');
+  if (closeSighupBtn) {
     sectionContainer.classList.add('is-hidden');
-  });
+    return;
+  }
+
   if (e.target.getAttribute('class') === 'sighin-link') {
     sectionContainer.classList.add('log-in-container');
     fillInSingInForm();
   } else if (e.target.getAttribute('class') === 'signup-link') {
     fillInSingUpForm();
   }
-});
+});;
 
 // signinBtn.addEventListener('click', e => {
 //   sectionContainer.classList.remove('is-hidden');
@@ -100,7 +102,7 @@ function fillInSingUpForm() {
   signUpFormContainer.innerHTML = `
   <button type="button" class="close-form-btn ">
   <span><svg class="close-form-icon " width="16" height="16">
-  <use href="../img/symbol-defs.svg#icon-close-black"></use></svg></span>
+  <use href="./img/symbol-defs.svg#icon-close-black"></use></svg></span>
   
   </button>
           <form id="signup-form" class="signup-form">
