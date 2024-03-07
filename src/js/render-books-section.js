@@ -20,24 +20,26 @@ export async function markupPopularBooks() {
 
         return data;
       });
+      markupBooksAfterSeeMoreBtn();
       return data;
     })
-    .then(data => {
-      booksSection.addEventListener('click', e => {
-        if (
-          e.target.nodeName === 'BUTTON' &&
-          e.target.hasAttribute('data-category')
-        ) {
-          const category = e.target.getAttribute('data-category');
-          const categoryData = data.find(item => item.list_name === category);
-          booksSection.innerHTML = '';
-          booksSection.classList.add('book-grid'); // Add book-grid class
-          // Add more books to the container
-          booksSection.innerHTML += fillBookShelf([categoryData]);
-        }
-      });
-      console.log(data);
-    })
+    // .then(data => {
+    //   booksSection.addEventListener('click', e => {
+    //     if (
+    //       e.target.nodeName === 'BUTTON' &&
+    //       e.target.hasAttribute('data-category')
+    //     ) {
+    //       const category = e.target.getAttribute('data-category');
+    //       console.log(data);
+    //       const categoryData = data.find(item => item.list_name === category);
+    //       booksSection.innerHTML = '';
+    //       booksSection.classList.add('book-grid'); // Add book-grid class
+    //       // Add more books to the container
+    //       // booksSection.innerHTML += fillBookShelf([categoryData]);
+    //     }
+    //   });
+    //   console.log(data);
+    // })
     .catch(error => console.log(error));
 }
 
@@ -54,6 +56,27 @@ function createBookShelf(array) {
     .join('');
 }
 // this function fills previously created bookshelves
+
+export function markupBooksAfterSeeMoreBtn() {
+  return booksSection.addEventListener('click', e => {
+    if (
+      e.target.nodeName === 'BUTTON' &&
+      e.target.hasAttribute('data-category')
+    ) {
+      urlCreator(
+        CONSTANTS.SELECTED_CATEGORY,
+        e.target.getAttribute('data-category')
+      )
+        .then(({ data }) => {
+          e.stopPropagation();
+          booksSection.innerHTML = '';
+          booksSection.classList.add('book-grid');
+          booksSection.innerHTML = markupSelectedCategory(data);
+        })
+        .catch(error => console.error(error));
+    }
+  });
+}
 
 export function markupCategories() {
   return categoriesContainer.addEventListener('click', e => {
