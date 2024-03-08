@@ -72,7 +72,8 @@ async function openPopupModal(event) {
     // bookshopLink.setAttribute('href', bookshopURL);
     // applebooksLink.setAttribute('href', applebooksURL);
     bookPresenseCheck();
-    document.body.style.overflow = 'hidden'; // Додаємо стиль, щоб заборонити прокрутку
+    //   document.body.style.overflow = 'hidden';
+    // Додаємо стиль, щоб заборонити прокрутку
   } catch (e) {
     console.log(e);
   }
