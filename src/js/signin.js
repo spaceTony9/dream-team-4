@@ -100,7 +100,7 @@ function fillInSingUpForm() {
   signUpFormContainer.innerHTML = `
   <button type="button" class="close-form-btn ">
   <span><svg class="close-form-icon " width="16" height="16">
-  <use href="../img/symbol-defs.svg#icon-close-black"></use></svg></span>
+  <use href="./img/symbol-defs.svg#icon-close-black"></use></svg></span>
   
   </button>
           <form id="signup-form" class="signup-form">
@@ -120,7 +120,7 @@ function fillInSingUpForm() {
                 class="email-input"
               />
               <svg class="email-icon" width="18" height="18">
-                <use href="../img/symbol-defs.svg#icon-mail"></use>
+                <use href="./img/symbol-defs.svg#icon-mail"></use>
               </svg>
             </div>
             <div class="signup-password">
@@ -131,7 +131,7 @@ function fillInSingUpForm() {
                 class="password-input"
               />
               <svg class="password-icon" width="18" height="18">
-                <use href="../img/symbol-defs.svg#icon-lock"></use>
+                <use href="./img/symbol-defs.svg#icon-lock"></use>
               </svg>
             </div>
             <button type="submit" class="signup-btn">Sign Up</button>
@@ -143,7 +143,7 @@ function fillInSingUpForm() {
 function fillInSingInForm() {
   signUpFormContainer.innerHTML = ` <button type="button" class="close-form-btn">
       <svg class="close-form-icon" width="16" height="16">
-        <use href="../img/symbol-defs.svg#icon-close-black"></use>
+        <use href="./img/symbol-defs.svg#icon-close-black"></use>
       </svg>
     </button>
     <form id="signup-form" class="signup-form">
@@ -156,7 +156,7 @@ function fillInSingInForm() {
           class="email-input"
         />
         <svg class="email-icon" width="18" height="18">
-          <use href="../img/symbol-defs.svg#icon-mail"></use>
+          <use href="./img/symbol-defs.svg#icon-mail"></use>
         </svg>
       </div>
       <div class="signup-password">
@@ -167,7 +167,7 @@ function fillInSingInForm() {
           class="password-input"
         />
         <svg class="password-icon" width="18" height="18">
-          <use href="../img/symbol-defs.svg#icon-lock"></use>
+          <use href="./img/symbol-defs.svg#icon-lock"></use>
         </svg>
       </div>
       <button type="submit" class="signup-btn">Sign IN</button>
@@ -182,7 +182,7 @@ function signupTemplate() {
     <div class="sighup-container">
     <button type="button" class="close-form-btn">
       <svg class="close-form-icon" width="16" height="16">
-        <use href="../img/symbol-defs.svg#icon-close-black"></use>
+        <use href="./img/symbol-defs.svg#icon-close-black"></use>
       </svg>
     </button>
     <form id="signup-form" class="signup-form">
@@ -202,7 +202,7 @@ function signupTemplate() {
           class="email-input"
         />
         <svg class="email-icon" width="18" height="18">
-          <use href="../img/symbol-defs.svg#icon-mail"></use>
+          <use href="./img/symbol-defs.svg#icon-mail"></use>
         </svg>
       </div>
       <div class="signup-password">
@@ -213,7 +213,7 @@ function signupTemplate() {
           class="password-input"
         />
         <svg class="password-icon" width="18" height="18">
-          <use href="../img/symbol-defs.svg#icon-lock"></use>
+          <use href="./img/symbol-defs.svg#icon-lock"></use>
         </svg>
       </div>
       <button type="submit" class="signup-btn">Sign Up</button>
