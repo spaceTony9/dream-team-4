@@ -23,29 +23,11 @@ export async function markupPopularBooks() {
           return data;
         });
         markupBooksAfterSeeMoreBtn();
-        terSeeMoreBtn();
         return data;
       } else {
         notificationError();
       }
     })
-    // .then(data => {
-    //   booksSection.addEventListener('click', e => {
-    //     if (
-    //       e.target.nodeName === 'BUTTON' &&
-    //       e.target.hasAttribute('data-category')
-    //     ) {
-    //       const category = e.target.getAttribute('data-category');
-    //       console.log(data);
-    //       const categoryData = data.find(item => item.list_name === category);
-    //       booksSection.innerHTML = '';
-    //       booksSection.classList.add('book-grid'); // Add book-grid class
-    //       // Add more books to the container
-    //       // booksSection.innerHTML += fillBookShelf([categoryData]);
-    //     }
-    //   });
-    //   console.log(data);
-    // })
     .catch(error => console.log(error));
 }
 
@@ -141,7 +123,6 @@ function fillBookShelf(array) {
 
 function markupSelectedCategory(array) {
   const bookCategoryHeader = document.querySelector('.best-sellers-header');
-  console.log(array);
   bookCategoryHeader.textContent = array[0].list_name; // Set category name once, assuming all books belong to the same category
 
   // Split the category name into words

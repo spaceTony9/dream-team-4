@@ -40,10 +40,10 @@ document.addEventListener('click', function (event) {
 });
 
 async function openPopupModal(event) {
-  console.log('open');
+  // console.log('open');
   event.preventDefault();
   if (!event.target.parentNode.hasAttribute('data-bookid')) {
-    console.log('no bookid');
+    // console.log('no bookid');
     return;
   }
   try {
