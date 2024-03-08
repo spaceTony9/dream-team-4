@@ -10,7 +10,7 @@ import{S as C,N as v,a as Q}from"./vendor-85b191d9.js";(function(){const n=docum
     </li>`}S.innerHTML=F;new C(".swiper",{direction:"vertical",slidesPerView:4,rewind:!0,spaceBetween:20,effect:"slide",breakpoints:{480:{slidesPerView:5.9999}},modules:[v],navigation:{nextEl:".swiper-next"}});I.addEventListener("click",()=>{l++,l===3?k.classList.add("rotateSvg"):l===4&&(k.classList.remove("rotateSvg"),l=0)});const a=document.querySelector(".main-page-books-section"),m=document.querySelector(".popup-modal-background"),G=document.querySelector(".popup-modal-close-button"),p=document.querySelector(".book-image"),X=document.querySelector(".book-title-pop"),Y=document.querySelector(".book-author"),K=document.querySelector(".book-description"),x=document.querySelector(".amazon-link"),H=document.querySelector(".bookshop-link"),P=document.querySelector(".applebooks-link"),A=document.querySelector(".add-to-list-button"),E=document.querySelector(".book-adding-text");let o,r=JSON.parse(localStorage.getItem("bookShopingListLS"))||[];a==null||a.addEventListener("click",d);G.addEventListener("click",h);m.addEventListener("click",e=>{e.target.classList.contains("popup-modal-background")&&h()});document.addEventListener("keydown",e=>{e.key==="Escape"&&h()});document.addEventListener("click",function(e){if(e.target.classList.contains("open-modal-btn")){const n=e.target.dataset.bookid;d(n)}});async function d(e){if(e.preventDefault(),!!e.target.parentNode.hasAttribute("data-bookid"))try{o=await D(e.target.parentNode.dataset.bookid),a.removeEventListener("click",d),m.classList.replace("hidden","visible"),p.src=o.book_image,p.alt=o.title,X.textContent=o.title,Y.textContent=o.author,K.textContent=o.description;const n=o.buy_links.find(t=>t.name==="Amazon").url,s=o.buy_links.find(t=>t.name==="Bookshop").url,c=o.buy_links.find(t=>t.name==="Apple Books").url;x.href=n,H.href=s,P.href=c,f()}catch(n){console.log(n)}}function h(){m.classList.replace("visible","hidden"),a.addEventListener("click",d),document.body.style.overflow=""}async function D(e){return await(await Q.get(`https://books-backend.p.goit.global/books/${e}`)).data}function f(){r.some(e=>e._id===o._id)?(A.removeEventListener("click",L),A.addEventListener("click",B),A.textContent="REMOVE FROM SHOPING LIST",E.classList.replace("hidden","visible")):(A.removeEventListener("click",B),A.addEventListener("click",L),A.textContent="ADD TO SHOPING LIST",E.classList.replace("visible","hidden")),localStorage.setItem("bookShopingListLS",JSON.stringify(r))}function L(){r.push(o),f()}function B(){r=r.filter(e=>e._id!==o._id),f()}const N=document.querySelector(".header-btn"),g=document.querySelector(".section-container"),w=document.querySelector(".sighup-container");N.addEventListener("click",e=>{g.classList.remove("is-hidden"),b()});w.addEventListener("click",e=>{document.querySelector(".close-form-btn").addEventListener("click",()=>{g.classList.add("is-hidden")}),e.target.getAttribute("class")==="signin-link-unactive"?(g.classList.add("log-in-container"),J()):e.target.getAttribute("class")==="signup-link-unactive"&&b()});function b(){w.innerHTML=`
   <button type="button" class="close-form-btn ">
   <span><svg class="close-form-icon " width="16" height="16">
-  <use href="../img/symbol-defs.svg#icon-close-black"></use></svg></span>
+  <use href="./img/symbol-defs.svg#icon-close-black"></use></svg></span>
   
   </button>
           <form id="signup-form" class="signup-form">
@@ -30,7 +30,7 @@ import{S as C,N as v,a as Q}from"./vendor-85b191d9.js";(function(){const n=docum
                 class="email-input"
               />
               <svg class="email-icon" width="18" height="18">
-                <use href="../img/symbol-defs.svg#icon-mail"></use>
+                <use href="./img/symbol-defs.svg#icon-mail"></use>
               </svg>
             </div>
             <div class="signup-password">
@@ -41,7 +41,7 @@ import{S as C,N as v,a as Q}from"./vendor-85b191d9.js";(function(){const n=docum
                 class="password-input"
               />
               <svg class="password-icon" width="18" height="18">
-                <use href="../img/symbol-defs.svg#icon-lock"></use>
+                <use href="./img/symbol-defs.svg#icon-lock"></use>
               </svg>
             </div>
             <button type="submit" class="signup-btn">Sign Up</button>
@@ -50,7 +50,7 @@ import{S as C,N as v,a as Q}from"./vendor-85b191d9.js";(function(){const n=docum
           <button type="button" class="signup-link-active">Sign up</button>
           <button type="button" class="signin-link-unactive">Sign in</button>`}function J(){w.innerHTML=` <button type="button" class="close-form-btn">
       <svg class="close-form-icon" width="16" height="16">
-        <use href="../img/symbol-defs.svg#icon-close-black"></use>
+        <use href="./img/symbol-defs.svg#icon-close-black"></use>
       </svg>
     </button>
     <form id="signup-form" class="signup-form">
@@ -63,7 +63,7 @@ import{S as C,N as v,a as Q}from"./vendor-85b191d9.js";(function(){const n=docum
           class="email-input"
         />
         <svg class="email-icon" width="18" height="18">
-          <use href="../img/symbol-defs.svg#icon-mail"></use>
+          <use href="./img/symbol-defs.svg#icon-mail"></use>
         </svg>
       </div>
       <div class="signup-password">
@@ -74,7 +74,7 @@ import{S as C,N as v,a as Q}from"./vendor-85b191d9.js";(function(){const n=docum
           class="password-input"
         />
         <svg class="password-icon" width="18" height="18">
-          <use href="../img/symbol-defs.svg#icon-lock"></use>
+          <use href="./img/symbol-defs.svg#icon-lock"></use>
         </svg>
       </div>
       <button type="submit" class="signup-btn">Sign IN</button>
@@ -82,4 +82,4 @@ import{S as C,N as v,a as Q}from"./vendor-85b191d9.js";(function(){const n=docum
     <div class="sighup-links">
     <button type="button" class="signup-link-unactive">Sign up</button>
     <button type="button" class="signin-link-active">Sign in</button>`}const O=document.querySelector(".header-burger"),y=document.querySelector(".mobile-menu-wrapper"),j=document.querySelector(".mobile-menu-close-btn"),U=document.querySelector(".header-main"),V=document.querySelector(".mobile-menu-btn-content-home"),z=document.querySelector(".mobile-menu-btn-content-shoplist");function q(){y.classList.remove("visually-hidden"),U.classList.add("visually-hidden")}function W(){y.classList.add("visually-hidden"),U.classList.remove("visually-hidden")}O.addEventListener("click",q);j.addEventListener("click",W);V.addEventListener("click",()=>{window.location.href="./"});z.addEventListener("click",()=>{window.location.href="shoplist.html"});(function(e,n,s){localStorage.getItem("my_darkMode")&&(n.documentElement.className+="darkmode")})(window,document);(function(e,n,s){n.querySelector("#checkbox").addEventListener("change",function(t){if(t.preventDefault(),n.documentElement.classList.toggle("darkmode"),n.documentElement.classList.contains("darkmode")){localStorage.setItem("my_darkMode",!0);return}localStorage.removeItem("my_darkMode")},!1)})(window,document);
-//# sourceMappingURL=header-chenges-theme-d952e99e.js.map
+//# sourceMappingURL=header-chenges-theme-30641084.js.map
